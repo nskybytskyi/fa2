@@ -3,59 +3,78 @@
 усе разом: [pdf](./pdf/main.pdf)
 
 1. Загальна топологія: [pdf](./pdf/topology.pdf)
-- Топологічні простори:
-    [pdf](./pdf/topology/introduction.pdf),
-    [tex](./tex/topology/introduction.tex)
-- Методи введення топології:
-    [pdf](./pdf/topology/closure-interior-bases.pdf),
-    [tex](./tex/topology/closure-interior-bases.tex)
-- Збіжність і неперервність:
-    [pdf](./pdf/topology/convergence-continuity.pdf),
-    [tex](./tex/topology/convergence-continuity.tex)
-- Аксіоми віддільності:
-    [pdf](./pdf/topology/separability.pdf),
-    [tex](./tex/topology/separability.tex)
-- Компактність у топологічних просторах:
-    [pdf](./pdf/topology/compactness.pdf),
-    [tex](./tex/topology/compactness.tex)
+
+    - Топологічні простори:
+        [pdf](./pdf/topology/introduction.pdf),
+        [tex](./tex/topology/introduction.tex)
+
+    - Методи введення топології:
+        [pdf](./pdf/topology/closure-interior-bases.pdf),
+        [tex](./tex/topology/closure-interior-bases.tex)
+
+    - Збіжність і неперервність:
+        [pdf](./pdf/topology/convergence-continuity.pdf),
+        [tex](./tex/topology/convergence-continuity.tex)
+
+    - Аксіоми віддільності:
+        [pdf](./pdf/topology/separability.pdf),
+        [tex](./tex/topology/separability.tex)
+
+    - Компактність у топологічних просторах:
+        [pdf](./pdf/topology/compactness.pdf),
+        [tex](./tex/topology/compactness.tex)
+
 2. Простори зі структурою: [pdf](./pdf/metric.pdf)
-- Метричні простори:
-    [pdf](./pdf/metric/introduction.pdf),
-    [tex](./tex/metric/introduction.tex)
-- Повні метричні простори:
-    [pdf](./pdf/metric/completeness.pdf),
-    [tex](./tex/metric/completeness.tex)
-- Компактні метричні простори:
-    [pdf](./pdf/metric/compactness.pdf),
-    [tex](./tex/metric/compactness.tex)
-- Лінійні простори:
-    [pdf](./pdf/metric/linear.pdf),
-    [tex](./tex/metric/linear.tex)
-- Нормовані простори:
-    [pdf](./pdf/metric/normed.pdf),
-    [tex](./tex/metric/normed.tex)
+
+    - Метричні простори:
+        [pdf](./pdf/metric/introduction.pdf),
+        [tex](./tex/metric/introduction.tex)
+
+    - Повні метричні простори:
+        [pdf](./pdf/metric/completeness.pdf),
+        [tex](./tex/metric/completeness.tex)
+
+    - Компактні метричні простори:
+        [pdf](./pdf/metric/compactness.pdf),
+        [tex](./tex/metric/compactness.tex)
+
+    - Лінійні простори:
+        [pdf](./pdf/metric/linear.pdf),
+        [tex](./tex/metric/linear.tex)
+
+    - Нормовані простори:
+        [pdf](./pdf/metric/normed.pdf),
+        [tex](./tex/metric/normed.tex)
+
 3. Функціональний аналіз: [pdf](./pdf/functional.pdf)
-- Спряжений простір:
-    [pdf](./pdf/functional/conjugate.pdf),
-    [tex](./tex/functional/conjugate.tex)
-- Слабка топологія і слабка збіжність:
-    [pdf](./pdf/functional/weak-topology-convergence.pdf),
-    [tex](./tex/functional/weak-topology-convergence.tex)
-- Приницп рівномірної обеженості:
-    [pdf](./pdf/functional/uniform-boundedness.pdf),
-    [tex](./tex/functional/uniform-boundedness.tex)
-- Принцип відкритості відображення:
-    [pdf](./pdf/functional/openness.pdf),
-    [tex](./tex/functional/openness.tex)
-- Спряжені оператори, спектр і компактні оператори:
-    [pdf](./pdf/functional/spectrum.pdf),
-    [tex](./tex/functional/spectrum.tex)
-- Гільбертові простори:
-    [pdf](./pdf/functional/hilbert.pdf),
-    [tex](./tex/functional/hilbert.tex)
-- Теорема про ізоморфізм:
-    [pdf](./pdf/functional/isomorphism.pdf),
-    [tex](./tex/functional/isomorphism.tex)
+
+    - Спряжений простір:
+        [pdf](./pdf/functional/conjugate.pdf),
+        [tex](./tex/functional/conjugate.tex)
+
+    - Слабка топологія і слабка збіжність:
+        [pdf](./pdf/functional/weak-topology-convergence.pdf),
+        [tex](./tex/functional/weak-topology-convergence.tex)
+
+    - Приницп рівномірної обеженості:
+        [pdf](./pdf/functional/uniform-boundedness.pdf),
+        [tex](./tex/functional/uniform-boundedness.tex)
+
+    - Принцип відкритості відображення:
+        [pdf](./pdf/functional/openness.pdf),
+        [tex](./tex/functional/openness.tex)
+
+    - Спряжені оператори, спектр і компактні оператори:
+        [pdf](./pdf/functional/spectrum.pdf),
+        [tex](./tex/functional/spectrum.tex)
+
+    - Гільбертові простори:
+        [pdf](./pdf/functional/hilbert.pdf),
+        [tex](./tex/functional/hilbert.tex)
+
+    - Теорема про ізоморфізм:
+        [pdf](./pdf/functional/isomorphism.pdf),
+        [tex](./tex/functional/isomorphism.tex)
 
 ### Про цю книгу
 
