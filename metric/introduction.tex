@@ -1,0 +1,303 @@
+\chapter{Метричні простори}
+
+Численні поняття і теореми математичного аналізу
+використовують поняття відстані між точками простору.
+Зокрема, це стосується границі і неперервності. В багатьох
+випадках самі теореми та їх доведення залежать не від
+способу завдання метрики, а лише від їхніх властивостей:
+невід’ємності, симетрії і нерівності трикутника.
+
+\section{Основні означення}
+
+\begin{definition}
+Нехай X — довільна множина. Відображення
+$\rho: X \times X \to \RR^+$ називається \vocab{метрикою}, якщо $\forall x, y, z \in X$
+воно має такі властивості (аксіоми метрики):
+\begin{enumerate}
+    \item $\rho(x, y) = 0 \iff x = y$ (аксіома тотожності);
+    \item $\rho(x, y) = \rho(y, x)$ (аксіома симетрії);
+    \item $\rho(x, y) \le \rho(x, z) + \rho(z, y)$ (нерівність трикутника).
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+\vocab{Метричним простором} називається пара
+$(X, \rho)$, де $X$ --- множи\-на-носій, а $\rho$ --- метрика.
+\end{definition}
+
+\begin{example}
+$\left( \RR^n, \sqrt{\sum_{i = 1}^n (x_i - y_i)^2} \right)$.
+\end{example}
+
+\begin{example}
+$\left( C[a, b], \max_{t \in [a, b]} |x(t) - y(t)| \right)$.
+\end{example}
+
+\begin{definition}
+\vocab{Відкритою кулею} радіуса $\epsilon > 0$ з центром в
+точці $x_0 \in X$ називається множина
+\begin{equation*}
+    S(x_0, \epsilon) = \{x \in X: \rho(x, x_0) < \epsilon \}.
+\end{equation*}
+\end{definition}
+
+\begin{definition}
+\vocab{Замкненою кулею} радіуса $\epsilon > 0$ з центром в
+точці $x_0 \in X$ називається множина
+\begin{equation*}
+    \closure S(x_0, \epsilon) = \{x \in X: \rho(x, x_0) \le \epsilon \}.
+\end{equation*}
+\end{definition}
+
+\begin{example}
+В просторі $(\RR, |x - y|)$ відкритою кулею $S(x_0, r)$
+є інтервал $(x_0 - r, x_0 + r)$, а замкненою кулею ---
+сегмент $[x_0 - r, x_0 + r]$.
+\end{example}
+
+\begin{example}
+В просторі $(\RR^2, \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2})$ відкритою
+кулею $S(x_0, r)$ є круг без границі радіуса $r$ з центром в точці $x_0$.
+\end{example}
+
+\begin{example}
+В просторі $(\RR^2, |x_1 - y_1| + |x_2 - y_2|)$ одинична
+куля є ромбом з вершинами $(0, 1)$, $(1, 0)$, $(0, -1)$ і $(-1, 0)$.
+\end{example}
+
+\begin{example}
+В просторі $\left( C[a, b], \max_{t \in [a, b]} |x(t) - y(t)| \right)$
+околом є смуга, що складається із функцій, які
+задовольняють умові $\forall t \in [a, b]$: $|x(t) - y (t)| < r$.
+\end{example}
+
+\begin{definition}
+Множина $G \subset  X$ називається \vocab{відкритою} в
+метричному просторі $(X, \rho)$, якщо $\forall x \in G$ $\exists S(x, r) \subset G$.
+\end{definition}
+
+\begin{definition}
+Множина $G \subset X$ називається \vocab{замкненою}, якщо
+її доповнення є відкритою множиною.
+\end{definition}
+
+\begin{definition}
+Множина метричного простору є \vocab{обмеженою
+за відстанню}, або просто \vocab{обмеженою}, якщо воно
+міститься в деякій кулі: $\exists S(x, r): M \subset S(x, r)$.
+\end{definition}
+
+\section{Збіжність і замкненість}
+
+\begin{definition}
+Точка $x$ метричного простору $(X, \rho)$
+називається \vocab{границею послідовності} точок $x_n \in X$, якщо
+$\rho(x_n, x) \to 0$  при $n \to \infty$. Така збіжність називається
+\vocab{збіжністю за відстанню} (або за метрикою).
+
+Цей факт записується так: $x = \lim_{n \to \infty} x_n$.
+\end{definition}
+
+\begin{lemma}
+Для довільних точок $x, x', y, y'$ метричного
+простору $(X, \rho)$ виконується нерівність
+\begin{equation*}
+    |\rho(x', y') - \rho(x, y)| \le \rho(x, x') + \rho(y, y').
+\end{equation*}
+\end{lemma}
+
+\begin{proof}
+Із нерівності трикутника випливає:
+\begin{equation*}
+    \rho(x', y') \le
+    \rho(x', x) + \rho(x, y') \le
+    \rho(x, x') + \rho(x, y) + \rho(y, y').
+\end{equation*}
+Отже,
+\begin{equation*}
+    \rho(x', y') - \rho(x, y) \le
+    \rho(x, x') + \rho(y, y').
+\end{equation*}
+Аналогічно,
+\begin{equation*}
+    \rho(x, y) \le
+    \rho(x, x') + \rho(x', y) \le
+    \rho(x, x') + \rho(x', y') + \rho( y', y).
+\end{equation*}
+Звідси випливає, що
+\begin{equation*}
+    \rho(x, y) - \rho(x', y') \le
+    \rho(x, x') + \rho(y, y').
+\end{equation*}
+Таким чином,
+\begin{equation*}
+    |\rho(x', y') - \rho(x, y)| \le
+    \rho(x, x') + \rho(y, y'). \qedhere
+\end{equation*}
+\end{proof}
+
+\begin{lemma}
+Метрика $\rho(x, y)$ є неперервною функцію своїх
+аргументів, тобто якщо $x_n \to x$, $y_n \to y$, то
+$\rho(x_n, y_n) \to \rho(x, y)$.
+\end{lemma}
+
+\begin{proof}
+Із леми 6.1 випливає, що при $x_n \to x$, $y_n \to y$
+\begin{equation*}
+    |\rho(x_n, y_n) - \rho(x, y)| \le
+    \rho(x_n, x) + \rho(y_n, y) \to
+    0. \qedhere
+\end{equation*}
+\end{proof}
+
+\begin{theorem}
+Відкрита куля $S(a, r)$ в метричному
+просторі $(X, \rho)$ є відкритою множиною в топології
+метричного простору, що породжена його метрикою.
+\end{theorem}
+
+\begin{proof}
+Розглянемо довільну точку $x \in S(a, r)$.
+\begin{equation*}
+    x \in S(a, r) \implies
+    \rho(x, a) < r.
+\end{equation*}
+Покладемо $\epsilon = r - \rho(x, a)$. Розглянемо довільну точку
+$y \in S(x, \epsilon)$.
+\begin{equation*}
+    y \in S(x, e) \implies
+    \rho(y, x) < \epsilon.
+\end{equation*}
+\begin{equation*}
+    \rho(y, a) \le
+    \rho(y, x) + \rho(x, a) < r \implies
+    y \in S(a, r) \implies S(x, \epsilon) \subset S(a, r).
+\end{equation*}
+Таким чином, точка $x$ є внутрішньою точкою множини
+$S(a, r)$, тобто $S(a, r)$ --- відкрита множина. 
+\end{proof}
+
+\begin{theorem}
+Точка $x$ належить замиканню $\closure A$ множини
+$A \subset X$ в топології, що індукована на $X$ метрикою $\rho$, тоді і
+лише тоді, якщо існує послідовність точок множини $A$, що
+збігається до точки $x$.
+\end{theorem}
+
+\begin{proof}
+Необхідність.
+\begin{equation*}
+    x \in \closure A \implies
+    \forall n \in \NN \exists x_n \in S \cap S(x, \tfrac{1}{n}) \implies
+    \rho(x, x_n) < \tfrac{1}{n} \implies
+    x = \lim_{n \to \infty} x_n.
+\end{equation*}
+
+Достатність.
+\begin{multline*}
+    x \not\in \closure A \implies
+    \exists r > 0: A \cap S(x, r) = \emptyset \implies \\
+    \forall x' \in A: \rho(x, x') \ge r \implies
+    \nexists \{x_n\}_{n \in \NN} \subset A: \lim_{n \to \infty} x_n = x.
+\end{multline*}
+
+Що і треба було довести.
+\end{proof}
+
+\begin{corollary}
+Теорема 6.2 стверджує, що кожна точка
+дотику множини в метричному просторі є границею деякої
+послідовності елементів цієї множини. Отже, топологію
+метричного простору можна описати не лише за
+допомогою куль, а й за допомогою збіжних послідовностей.
+\end{corollary}
+
+\begin{corollary}
+Множина є замкненою, якщо всі
+послідовності її точок збігаються лише до точок цієї ж
+множини.
+\end{corollary}
+
+\begin{theorem}
+Замкнена куля $\closure S(a, r)$ є замкненою
+множиною в топології метричного простору, що
+породжена його метрикою.
+\end{theorem}
+
+\begin{proof}
+Нехай $x_n \in \closure S(a, r)$.
+\begin{multline*}
+    x_n \in \closure S(a, r) \implies
+    \rho(x_n, a) \le r \implies \\
+    \lim_{n \to \infty} \rho(x_n, a) = \rho\left(\lim_{n \to \infty} x_n, a\right) = \rho(x, a) \le r \implies
+    x \in \closure S(a, r).
+\end{multline*}
+
+Отже, всі граничні точки множини $\closure S(a, r)$, які є точками
+її дотику, належать кулі $\closure S(a, r)$. 
+\end{proof}
+
+\section{Збіжність і фундаментальність}
+
+\begin{definition}
+Послідовність $\{x_n\}_{n \in \NN}$ точок метричного
+простору $(X, \rho)$ називається \vocab{фундаментальною}, якщо
+$\rho(x_n, x_m) \to 0$ при $n \to \infty$, $m \to \infty$.
+\end{definition}
+
+\begin{lemma}
+Будь-яка збіжна послідовність метричного
+простору є фундаментальною.
+\end{lemma}
+
+\begin{proof}
+Нехай $x_n \to x$ при $n \to \infty$. Тоді
+\begin{equation*}
+    \rho(x_n, x_m) \le \rho(x_n, x) + \rho(x, x_m) \to 0 \text{ при } n, m \to \infty.
+\end{equation*}
+Отже, послідовність є фундаментальною. 
+\end{proof}
+
+\begin{lemma}
+Будь-яка фундаментальна послідовність
+точок метричного простору є обмеженою.
+\end{lemma}
+
+\begin{proof}
+Задамо $\epsilon > 0$ і підберемо натуральне число $N$
+так, щоб $\rho(x_n, x_m) < \epsilon$ при $n, m \ge N$.
+Зокрема, $\rho(x_n, x_N) < \epsilon$ при $n \ge N$.
+Введемо позначення
+\begin{equation*}
+    r = \max \{ \epsilon, \rho(x_1, x_N), \rho(x_2, x_N), \dots, \rho(x_{N - 1}, x_N) \}.
+\end{equation*}
+
+Тепер при всіх $n = 1, 2, \dots$
+\begin{equation*}
+    \rho(x_n, x_N) \le r.
+\end{equation*}
+
+Інакше кажучи,
+\begin{equation*}
+    \{x_n\}_{n \in \NN} \subset \closure S(x_N, r).
+\end{equation*}
+Замінюючи число $r$ на будь-яке число $r' > r$, можна
+заключити послідовність в довільну відкриту кулю:
+\begin{equation*}
+    \{x_n\}_{n \in \NN} \subset S(x_N, r'). \qedhere
+\end{equation*}
+\end{proof}
+
+\section{Література}
+
+\begin{enumerate}[label={[\arabic*]}]
+\item \textbf{Александрян~Р.~А.}
+Общая топология /
+Р.~А.~Александрян, Э.~А.~Мирзаханян ---
+М.: Высшая школа, 1979 (стр.~47--50).
+\item \textbf{Садовничий~В.~А.}
+Теория операторов /
+В.~А.~Садовничий ---
+М.: Изд-во Моск. ун-та, 1986 (стр.~60--69).
+\end{enumerate}

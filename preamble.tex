@@ -1,0 +1,198 @@
+% This partially originates from Evan Chen, namely
+% https://github.com/vEnhance/dotfiles/blob/master/texmf/tex/latex/evan/evan.sty
+% Please, see the license note there.
+\usepackage[utf8]{inputenc}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[english,russian,ukrainian]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={green!50!black},
+    urlcolor={blue!80!black}
+}
+\usepackage[nameinlink,ukrainian]{cleveref}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\inv}{^{-1}}
+\newcommand{\conjugate}[1]{#1^\star}
+\newcommand{\dconjugate}[1]{#1^{\star\star}}
+\newcommand{\transpose}[1]{#1^\intercal}
+\newcommand{\weakto}{\rightharpoonup}
+\newcommand{\closure}[1]{\overline{#1}}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\DeclareMathOperator{\sign}{sgn}
+\DeclareMathOperator{\spanning}{span}
+\DeclareMathOperator{\kernel}{ker}
+\DeclareMathOperator{\Closure}{cl}
+\DeclareMathOperator{\Interior}{int}
+\DeclareMathOperator*{\Bigcup}{\bigcup}
+\DeclareMathOperator*{\Bigcap}{\bigcap}
+
+
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\theoremstyle{definition}
+
+\mdfdefinestyle{mdbluebox}{%
+	roundcorner = 10pt,
+	linewidth=1pt,
+	skipabove=12pt,
+	innerbottommargin=9pt,
+	skipbelow=2pt,
+	nobreak=true,
+	linecolor=blue,
+	backgroundcolor=TealBlue!5,
+}
+
+\declaretheoremstyle[
+	headfont=\sffamily\bfseries\color{MidnightBlue},
+	mdframed={style=mdbluebox},
+	headpunct={\\[3pt]},
+	postheadspace={0pt}
+]{thmbluebox}
+
+\declaretheorem[style=thmbluebox,name=Теорема,numberwithin=chapter]{theorem}
+\declaretheorem[style=thmbluebox,name=Лема,numberwithin=chapter]{lemma}
+\declaretheorem[style=thmbluebox,name=Наслідок,numberwithin=chapter]{corollary}
+\declaretheorem[style=thmbluebox,name=Твердження,numberwithin=chapter]{proposition}
+
+\mdfdefinestyle{mdredbox}{%
+	linewidth=0.5pt,
+	skipabove=12pt,
+	frametitleaboveskip=5pt,
+	frametitlebelowskip=0pt,
+	skipbelow=2pt,
+	frametitlefont=\bfseries,
+	innertopmargin=4pt,
+	innerbottommargin=8pt,
+	nobreak=true,
+	linecolor=RawSienna,
+	backgroundcolor=Salmon!5,
+}
+
+\declaretheoremstyle[
+	headfont=\bfseries\color{RawSienna},
+	mdframed={style=mdredbox},
+	headpunct={\\[3pt]},
+	postheadspace={0pt},
+]{thmredbox}
+
+\declaretheorem[style=thmredbox,name=Приклад,numberwithin=chapter]{example}
+
+\mdfdefinestyle{mdgreenbox}{%
+	skipabove=8pt,
+	linewidth=2pt,
+	rightline=false,
+	leftline=true,
+	topline=false,
+	bottomline=false,
+	linecolor=ForestGreen,
+	backgroundcolor=ForestGreen!5,
+}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{ForestGreen!70!black},
+	bodyfont=\normalfont,
+	spaceabove=2pt,
+	spacebelow=1pt,
+	mdframed={style=mdgreenbox},
+	headpunct={ --- },
+]{thmgreenbox}
+
+\declaretheorem[style=thmgreenbox,name=Зауваження,numberwithin=chapter]{remark}
+
+\mdfdefinestyle{mdblackbox}{%
+	skipabove=8pt,
+	linewidth=3pt,
+	rightline=false,
+	leftline=true,
+	topline=false,
+	bottomline=false,
+	linecolor=black,
+	backgroundcolor=RedViolet!5!gray!5,
+}
+
+\declaretheoremstyle[
+	headfont=\bfseries,
+	bodyfont=\normalfont\small,
+	spaceabove=0pt,
+	spacebelow=0pt,
+	mdframed={style=mdblackbox}
+]{thmblackbox}
+
+\declaretheorem[style=thmblackbox,name=Вправа,numberwithin=chapter]{exercise}
+\newtheorem{definition}{Означення}[chapter]
+\newtheorem{abuse}{Зловживання позначеннями}[chapter]
+
+\newcommand{\vocab}[1]{\textbf{\color{blue} #1}}
+\newcommand{\mailto}[1]{\href{mailto:#1}{\texttt{#1}}}
+
+\usepackage[skip=\smallskipamount,indent=\parindent]{parskip}
+\usepackage[headsepline]{scrlayer-scrpage}
+\renewcommand{\headfont}{}
+\addtolength{\textheight}{3.14cm}
+\setlength{\footskip}{0.5in}
+\setlength{\headsep}{10pt}
+\automark[chapter]{chapter}
+\rohead{\footnotesize\thepage}
+\rehead{\footnotesize\textbf{\sffamily Функіональний Аналіз}, \emph{Дмитро Клюшин}}
+\lehead{\footnotesize\thepage}
+\lohead{\footnotesize\leftmark}
+\chead{}
+\rofoot{}
+\refoot{}
+\lefoot{}
+\lofoot{}
+
+\makeatletter
+\usepackage{etoolbox}
+\pretocmd{\tableofcontents}{%
+  \if@openright\cleardoublepage\else\clearpage\fi
+  \pdfbookmark[0]{\contentsname}{toc}%
+}{}{}%
+\makeatother
+\setcounter{tocdepth}{1}
+\usepackage[tocindentauto]{tocstyle}
+\usetocstyle{KOMAlike}
+
+\usepackage[tight]{minitoc}
+\mtcsetfont{parttoc}{chapter}{\sffamily\bfseries}
+\mtcsetfont{parttoc}{section}{\footnotesize\rmfamily\upshape\mdseries}
+\mtcsetfont{parttoc}{subsection}{\footnotesize\rmfamily\upshape\mdseries}
+\setcounter{parttocdepth}{1}
+\renewcommand*{\partheadstartvskip}{\vspace*{20em}}
+\renewcommand*{\partheadendvskip}{}
+\renewcommand\beforeparttoc{\noindent{\bfseries \Large Частина \thepart: Зміст}}
+\doparttoc[n]
+
+\renewcommand*{\sectionformat}{\color{purple}\S\thesection\autodot\enskip}
+\renewcommand*{\subsectionformat}{\color{purple}\S\thesubsection\autodot\enskip}
+\renewcommand{\thesubsection}{\thesection.\roman{subsection}}
+
+\addtokomafont{chapterprefix}{\raggedleft}
+\RedeclareSectionCommand[beforeskip=0.5em]{chapter}
+\renewcommand*{\chapterformat}{%
+\mbox{\scalebox{1.5}{\chapappifchapterprefix{\nobreakspace}}%
+\scalebox{2.718}{\color{purple}\thechapter\autodot}\enskip}}
+
+\addtokomafont{partprefix}{\rmfamily}
+\renewcommand*{\partformat}{\color{purple}\scalebox{2.5}{\thepart}}
+
+\newcommand{\listhack}{$\empty$}
+\newcommand{\nothing}{$\left.\right.$}

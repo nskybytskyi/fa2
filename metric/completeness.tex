@@ -1,0 +1,397 @@
+\chapter{Повні метричні простори}
+
+\section{Повнота, ізометрія і поповнення}
+
+\begin{definition}
+Метричний простір називається \vocab{повним}, якщо
+в ньому будь-яка фундаментальна послідовність має
+границю.
+\end{definition}
+
+\begin{example}
+$\left( \RR^n, \sqrt{\sum_{i = 1}^n (x_i - y_i)^2} \right)$.
+\end{example}
+
+\begin{example}
+$\left( C[a, b], \max_{t \in [a, b]} |x(t) - y(t)| \right)$.
+\end{example}
+
+\begin{definition}
+Бієктивне відображення $\phi$ одного метричного
+простору $(E_1, \rho_1)$ на інший $(E_2, \rho_2)$ називається
+\vocab{ізометрією}, якщо
+\begin{equation*}
+    \forall x_1, x_2 \in E_1: \rho_1(x_1, x_2) = \rho_2(\phi(x_1), \phi(x_2)).
+\end{equation*}
+\end{definition}
+
+\begin{definition}
+Метричні простори, між якими існує
+ізометрія, називаються \vocab{ізометричними}.
+\end{definition}
+
+\begin{definition}
+Повний метричний простір $(\tilde E, \tilde \rho)$ називається
+\vocab{поповненням} метричного простору $(E, \rho)$, якщо
+\begin{enumerate}
+    \item $E \subset \tilde E$;
+    \item $\closure E = \tilde{E}$.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}
+[про поповнення метричного простору, Хаусдорф]
+Будь-який метричний простір має поповнення,
+єдине з точністю до ізометрії, що залишає точки простору
+нерухомими.
+\end{theorem}
+
+\begin{lemma}
+Якщо фундаментальна послідовність містить
+збіжну підпослідовність, то сама послідовність збігається
+до тієї ж границі.
+\end{lemma}
+
+\begin{proof}
+Припустимо, що $\lim_{n_k \to \infty} \rho(x_{n_k}, x_0) = 0$, тобто
+\begin{equation*}
+    \forall \epsilon > 0 \exists N_1(\epsilon) > 0: \forall n \ge N_1: \rho(x_{n_k}, x_0) < \epsilon.
+\end{equation*}
+
+За нерівністю трикутника
+\begin{equation*}
+    \rho(x_n, x) \le \rho(x_n, x_{n_k}) + \rho(x_{n_k}, x).
+\end{equation*}
+
+Оскільки послідовність $\{x_n\}_{n \in \NN}$ є фундаментальною,
+\begin{equation*}
+    \forall \epsilon > 0 \exists N_2(\epsilon) > 0: \forall n, m \ge N_2: \rho(x_n, x_m) < \epsilon.
+\end{equation*}
+
+Таким чином,
+\begin{equation*}
+    \forall \epsilon > 0 \forall n, n_k \ge \max(N_1, N_2):
+    \rho(x_n, x_0) \le \rho(x_n, x_{n_k}) + \rho(x_{n_k}, x_0) <
+    \epsilon + \epsilon = 2 \epsilon. \qedhere
+\end{equation*}
+\end{proof}
+
+\begin{lemma}
+Будь-яка підпослідовність фундаментальної
+послідовності є фундаментальною.
+\end{lemma}
+
+\begin{proof}
+За нерівністю трикутника
+\begin{equation*}
+    \rho(x_{n_k}, x_{n_l}) \le \rho(x_{n_k}, x_n) + \rho(x_n, x_{n_l}).
+\end{equation*}
+
+Оскільки послідовність $\{x_n\}_{n \in \NN}$ є фундаментальною,
+\begin{equation*}
+    \forall \epsilon > 0 \exists N(\epsilon) > 0: \forall n, m \ge N: \rho(x_n, x_m) < \epsilon.
+\end{equation*}
+
+Отже,
+\begin{equation*}
+    \forall \epsilon > 0 \forall n, n_k, n_l \ge N:
+    \rho(x_{n_k}, x_{n_l}) \le \rho(x_{n_k}, x_n) + \rho(x_n, x_{n_l})
+    < \epsilon + \epsilon = 2 \epsilon. \qedhere
+\end{equation*}
+\end{proof}
+
+\section{Вкладені кулі і повнота}
+
+\begin{theorem}
+[принцип вкладених куль] Для того щоб
+метричний простір був повним, необхідно і достатньо, щоб
+у ньому будь-яка послідовність замкнених вкладених одна в
+одну куль, радіуси яких прямують до нуля, мала непорожній
+перетин.
+\end{theorem}
+
+\begin{proof}
+Необхідність. Нехай $(X, \rho)$ --- повний
+метричний простір, а $S_1^\star(x_1, r_1) \supset S_2^\star(x_2, r_2) \supset \dots$ --- вкладені
+одна в одну замкнені кулі.
+
+Послідовність їх центрів є фундаментальною, оскільки
+\begin{equation*}
+    \rho(x_n, x_m) < r_n \text{ при } m > n, \text{ а } r_n \to 0 \text{ при } n \to \infty.
+\end{equation*}
+
+Оскільки $(X, \rho)$ --- повний метричний простір, існує
+елемент $x = \lim_{n \to \infty} x_n$, $x \in X$.
+
+Покажемо, що $x$ належить всім кулям $S_n^\star(x_n, r_n)$, $n \in \NN$,
+тобто $x \in \Bigcap_{n = 1}^\infty S_n^\star(x_n, r_n)$. Дійсно, оскільки
+$x = \lim_{n \to \infty} x_n$, то
+\begin{equation*}
+    \forall \epsilon > 0 \exists N > 0: \forall n \ge N: \rho(x_n, x) < \epsilon.    
+\end{equation*}
+
+Значить, в довільному околі точки $x$ знайдеться
+нескінченна кількість точок із послідовності $\{x_n\}$,
+починаючи з деякого номера $N$. Оскільки кулі вкладені
+одна в одну, ці точки належать всім попереднім кулям
+$S_1^\star, S_2^\star, \dots, S_{N - 1}^\star$.
+Отже, для довільного $n$ точка $x$ є точкою
+дотику множини $S_n^\star$, тобто належить його замиканню.
+Оскільки кожна куля є замкненою, точка $x$ належить всім
+$S_n^\star$. Це означає, що
+\begin{equation*}
+    x \in \Bigcap_{n = 1}^\infty S_n^\star.
+\end{equation*}
+
+Достатність. Покажемо, що якщо $\{x_n\}_{n \in \NN}$ ---
+фундаментальна послідовність, то вона має границю $x \in X$.
+
+\begin{enumerate}
+\item Оскільки послідовність $\{x_n\}_{n = 1}^\infty$ є фундаментальною, то
+$\forall \epsilon > 0 \exists n_1 > 0$:
+$\forall n \ge n_1$ $\rho(x_n, x_{n_1}) < \epsilon$.
+Поклавши $\epsilon = \frac{1}{2}$, ми можемо вибрати точку
+$x_{n_1}$ так, що $\rho(x_n, x_{n_1}) < \frac{1}{2}$ для
+довільного $n > n_1$. Зробимо точку
+$x_{n_1}$ центром замкненої кулі радіуса $1$: 
+$S_1^\star(x_{n_1}, 1)$.
+
+\item Оскільки підпослідовність $\{x_n\}_{n = n_1}^\infty$
+є фундаментальною (за лемою 7.2), то поклавши $\epsilon = \frac{1}{2^2}$,
+можна вибрати точку $x_{n_2}$ x таку, що 
+$\rho(x_n, x_{n_2}) < \frac{1}{2^2}$ для довільного
+$n > n_2 > n_1$. Зробимо точку
+$x_{n_2}$ центром замкненої кулі
+радіуса $\frac{1}{2}$: $S_2^\star(x_{n_2}, \frac{1}{2})$.
+
+\dots
+
+\item[$k$.] Нехай $x_{n_1}, x_{n_2}, \dots, x_{n_{k - 1}}$,
+де $n_1 < n_2 < \dots < n_{k - 1}$ уже вибрані.
+Тоді, оскільки підпослідовність $\{x_n\}_{n = n_{k - 1}}^\infty$
+є фундаментальною, покладемо $\epsilon = \frac{1}{2^k}$ і виберемо
+точку $x_{n_k}$ так, щоб виконувалися умови 
+$\rho(x_n, x_{n_k}) < \frac{1}{2^k}$
+для довільного $n \ge n_k > n_{k - 1}$. Як і раніше, будемо
+вважати точку $x_{n_k}$ центром замкненої кулі радіуса
+$\frac{1}{2^{k - 1}}$: $S_k^\star(x_{n_k}, \frac{1}{2^{k - 1}})$.
+
+\dots
+\end{enumerate}
+
+Продовжуючи цей процес, ми отримаємо послідовність
+замкнених куль, радіуси яких прямують до нуля. Покажемо,
+що ці кулі вкладаються одна в одну, тобто
+\begin{equation*}
+    S_{k + 1}^\star ( x_{n_{k + 1}}, \tfrac{1}{2^k} ) \subset
+    S_k^\star ( x_{n_k}, \tfrac{1}{2^{k - 1}} ).
+\end{equation*}
+
+Нехай точка $y \in S_{k + 1}^\star ( x_{n_{k + 1}}, \tfrac{1}{2^k} )$.
+Значить, $\rho(y, x_{n_{k + 1}}) \le \frac{1}{2^k}$.
+За нерівністю трикутника
+\begin{equation*}
+    \rho(y, x_{n_k}) \le \rho(y, x_{n_{k + 1}}) + \rho(x_{n_{k + 1}}, x_{n_k}).
+\end{equation*}
+
+Оскільки $n_{k + 1} > n_k$, то $\rho(x_{n_{k + 1}}, x_{n_k}) < \frac{1}{2^k}$. Значить,
+\begin{equation*}
+    \rho(y, x_{n_k}) \le \frac{1}{2^k} + \frac{1}{2^k} =
+    \frac{2}{2^k} = \frac{1}{2^{k - 1}}.
+\end{equation*}
+
+Інакше кажучи,
+\begin{equation*}
+    y \in S_k^\star ( x_{n_k}, \tfrac{1}{2^{k - 1}} )
+\end{equation*}
+
+Таким чином, ми побудували послідовність вкладених одна
+в одну замкнених куль, радіуси яких прямують до нуля.
+За припущенням, в просторі $(X, \rho)$ існує точка $x$,
+спільна для всіх таких куль:
+$x \in \Bigcap_{k = 1}^\infty S_k^\star(x_{n_k}, \frac{1}{2^{k - 1}})$. 
+Крім того, за побудовою, $\rho(x_n, x) = \frac{1}{2^{k - 1}} \to 0$,
+коли $k \to \infty$. Таким чином,
+фундаментальна послідовність $\{x_n\}$ містить
+підпослідовність $\{x_{n_k}\}$, що збігається до деякої точки в
+просторі $(X, \rho)$. Із леми 7.1 випливає, що і вся
+послідовність $\{x_n\}$ прямує то тієї ж точки. Таким чином,
+простір $(X, \rho)$ є повним.
+\end{proof}
+
+\begin{remark}
+Покажемо, що умову $r_n \to 0$ зняти не
+можна. Розглянемо метричний простір $(\NN, \rho)$, де
+\begin{equation*}
+    \rho(n, m) = \begin{cases}
+        1 + \frac{1}{n + m}, & n \ne m, \\
+        0, & \text{інакше}.
+    \end{cases}
+\end{equation*}
+
+Визначимо послідовність замкнених куль з центрами в
+точках $n$ і радіусом $1 + \frac{1}{2 n}$:
+\begin{equation*}
+    \closure S (n, 1 + \tfrac{1}{2n}) =
+    \{ m: \rho(n, m) \le 1 + \tfrac{1}{2n} \} =
+    \{n, n + 1, \dots\}, \quad n = 1, 2, \dots.
+\end{equation*}
+
+Ці кулі є вкладеними одна в одну і замкненими, простір є
+повним, але перетин куль є порожнім (яке б число ми не
+взяли, знайдеться нескінченна кількість куль, які лежать
+правіше цієї точки). Отже, необхідні умови в принципі
+вкладених куль не виконуються.
+\end{remark}
+
+\section{Категорії множин}
+
+\begin{definition}
+Підмножина $M$ метричного простору $(X, \rho)$
+називається \vocab{множиною першої категорії}, якщо її
+можна подати у вигляді об’єднання не більш ніж зліченої
+кількості ніде не щільних множин.
+\end{definition}
+
+\begin{definition}
+Підмножина $M$ метричного простору $(X, \rho)$
+називається \vocab{множиною другої категорії}, якщо вона не є
+множиною першої категорії.
+\end{definition}
+
+\begin{theorem}
+[теорема Бера про категорії] Нехай
+$(X, \rho)$--- непорожній повний метричний простір, тоді $X$
+є множиною другої категорії.
+\end{theorem}
+
+\begin{proof}
+Припустимо супротивне, тобто
+\begin{equation*}
+    X = \Bigcup_{n = 1}^\infty E_n,
+\end{equation*}
+і кожна множина $E_n$, $n = 1, 2, \dots$ є ніде не щільною в $X$.
+Нехай $S_0$ --- деяка замкнена куля радіуса $1$.
+
+Оскільки множина $E_1$ є ніде не щільною, існує замкнена
+куля $S_1$, радіус якої менше $\frac{1}{2}$, така що
+\begin{equation*}
+    S_1 \subset S_0 \text{ і } S_1 \cap E_1 = \emptyset.
+\end{equation*}
+
+(Якщо існує куля радіуса більше $\frac{1}{2}$, що задовольняє таким
+умовам, то ми виберемо в ній кулю, радіуса менше $\frac{1}{2}$.)
+
+Оскільки множина $E_2$ є ніде не щільною, існує замкнена
+куля $S_2$, радіус якої менше $\frac{1}{2^2}$, така що
+\begin{equation*}
+    S_2 \subset S_1 \text{ і } S_2 \cap E_2 = \emptyset.
+\end{equation*}
+
+Продовжуючи цей процес, ми отримаємо послідовність
+вкладених одна в одну замкнених куль $\{S_n\}_{n \in \NN}$, радіуси яких
+прямують до нуля. За принципом вкладених куль існує 
+точка $x \in \Bigcap_{n = 1}^\infty S_n \cap X$.
+Оскільки за побудовою $S_n \cap E_n = \emptyset$, то
+$x \not\in E_n$, $\forall n = 1, 2, \dots$. Значить,
+$x \not\in \Bigcup_{n = 1}^\infty E_n$.. Це суперечить
+припущенню, що $X = \Bigcup_{n = 1}^\infty E_n$. 
+\end{proof}
+
+\section{Стискаючі відображення}
+
+\begin{definition}
+Відображення $g: (X, \rho) \to (X, \rho)$ називається
+\vocab{стискаючим}, якщо існує таке число $0 < a < 1$, що
+$\rho(g(x), g(y)) \le a \rho(x, y)$ для довільних $x, y \in X$ .
+\end{definition}
+
+\begin{theorem}
+Будь-яке стискаюче відображення є неперервним.
+\end{theorem}
+
+\begin{proof}
+Нехай $x_n \to x$, а $g: X \to X$ є стискаючим відображенням. Тоді
+\begin{equation*}
+    0 \le \rho(g(x_n), g(x)) \le \alpha \rho(x_n, x) \to 0 \text{ при } n \to \infty.
+\end{equation*}
+
+Отже,
+\begin{equation*}
+    g(x_n) \to g(x), \text{ коли } x_n \to x. \qedhere
+\end{equation*}
+\end{proof}
+
+\begin{theorem}
+[принцип стискаючих відображень Банаха]
+Будь-яке стискаюче відображення повного
+метричного простору $(X, \rho)$ в себе має лише одну
+нерухому точку, тобто $\exists! x \in X$: $g(x) = x$.
+\end{theorem}
+
+\begin{proof}
+Нехай $x_0$ --- деяка точка із $X$. Визначимо
+послідовність точок $\{x_n\}_{n \in \NN}$ за таким правилом:
+\begin{equation*}
+    x_1 = g(x_0), \dots, x_n = g(x_{n - 1}).
+\end{equation*}
+
+Покажемо, що ця послідовність є фундаментальною.
+Дійсно, якщо $m > n$, то
+\begin{multline*}
+    \rho(x_n, x_m) = \rho(g(x_{n - 1}), g(x_{m - 1})) \le
+    \alpha \rho(x_{n - 1}, x_{m - 1}) \le \dots \le \\
+    \alpha^n \rho(x_0, x_{m - n}) \le
+    \alpha^n ( \rho(x_0, x_1) + \rho(x_1, x_2) + \dots + \rho(x_{m - n - 1}, x_{m - n}) \le \\
+    \alpha^n \rho(x_0, x_1) (1 + \alpha + \alpha^2 + \dots + \alpha^{m - n - 1}) \le
+    \alpha^n \rho(x_0, x_1) \tfrac{1}{1 - \alpha}.
+\end{multline*}
+
+Таким чином, оскільки $0 < \alpha < 1$,
+\begin{equation*}
+    \rho(x_n, x_m) \to 0, n \to \infty, m \to \infty, m > n.
+\end{equation*}
+
+Внаслідок повноти простору $(X, \rho)$ в ньому існує границя
+послідовності $\{x_n\}$. Позначимо її через $x = \lim_{n \to \infty} x_n$.
+
+Із теореми 7.3 випливає, що
+\begin{equation*}
+    g(x) = \lim_{n \to \infty} g(x_n) = \lim_{n \to \infty} x_{n + 1} = x.
+\end{equation*}
+Отже, нерухома точка існує.
+
+Доведемо її єдиність. Якщо $g(x) = x$ і $g(y) = y$, то
+$\rho(x, y) \le a \rho(x, y)$, тобто $\rho(x, y) = 0$.
+За аксіомою тотожності (невиродженості) це означає, що $x = y$. 
+\end{proof}
+
+\begin{corollary}
+Умову $a < 1$ не можна замінити на $a \le 1$.
+\end{corollary}
+
+\begin{proof}
+Якщо відображення $g: (X, \rho) \to (X, \rho)$
+має властивість $\rho(g(x), g(y)) \le \rho(x, y)$,
+$\forall x, y \in X$, $x \ne y$,
+то нерухомої точки може не бути.
+Дійсно, розглянемо простір $([1, \infty), |x - y|)$
+і визначимо відображення $g(x) = x + \frac{1}{x}$.
+Тоді $\rho(g(x), g(y)) = |x + \frac{1}{x} - y - \frac{1}{y}| < |x - y|$. 
+Оскільки для жодного $x \in [1, \infty)$
+$g(x) = x + \frac{1}{x} \ne x$,
+нерухомої точки немає.
+\end{proof}
+
+\section{Література}
+
+\begin{enumerate}[label={[\arabic*]}]
+\item \textbf{Садовничий~В.~А.}
+Теория операторов. /
+В.~А.~Садовничий ---
+М.: Изд-во Моск. ун-та, 1986 (стр.~41--47).
+\item \textbf{Колмогоров~А.~Н.}
+Элементы теории функций и функционального анализа. 5-е изд. /
+А.~Н.~Колмогоров, С.~В.~Фомин ---
+М.: Наука, 1981 (стр. 66--75).
+\end{enumerate}

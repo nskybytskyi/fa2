@@ -1,0 +1,314 @@
+\chapter{Нормовані простори}
+
+\section{Норми векторів}
+
+\begin{definition}
+Нехай $E$ --- лінійний простір над полем $k$.
+Відображення $\|\cdot\|: E \to \RR^+$ називається \vocab{нормою} в просторі
+$E$, якщо $\forall x, y \in E$, $\lambda \in k$) виконуються аксіоми норми:
+\begin{enumerate}
+\item $\|x\| = 0$ тоді і тільки тоді, коли $x = 0$ (віддільність);
+\item $\|\lambda x\| = |\lambda| \cdot \|x\|$ (однорідність);
+\item $\|x\| + \|y\| \le \|x + y\|$ (нерівність трикутника).
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+Лінійний простір із введеною на ньому нормою
+називається \vocab{нормованим}.
+\end{definition}
+
+\begin{remark}
+Ясно, що нормований простір є метричним, оскільки в
+ньому можна ввести метрику $\rho(x, y) = \|x - y\|$. З цього
+випливає, що норма елемента в нормованому просторі є
+відстанню між ним і нульовим елементом: $\|x\| = \rho(x, \vec 0)$.
+\end{remark}
+
+\begin{example}
+Простір
+\begin{equation*}
+    \ell = \left\{ x = (x_1, x_2, \dots, x_n, \dots): \sum_{i = 1}^\infty |x_i| < \infty \right\}
+\end{equation*}
+є нормованим з нормою $\|x\| = \sum_{i = 1}^\infty |x_i|$.
+\end{example}
+
+\begin{definition}
+Послідовність $\{x_n\}$ елементів нормованого
+простору $E$ називається \vocab{збіжною за нормою}, або \vocab{сильно
+збіжною}, або просто \vocab{збіжною}, до елемента $x_0 \in E$, якщо
+$\|x_n - x_0\| \to 0$ при $n \to \infty$.
+Якщо $\{x_n\}$ збігається до елемента $x_0 \in E$, то
+$x_0 = \lim_{n \to \infty} x_n$.
+\end{definition}
+
+\begin{definition}
+Повний нормований простір називається \vocab{банаховим}.
+\end{definition}
+
+\section{Норми функціоналів}
+
+\begin{definition}
+Функціонал називається \vocab{обмеженим}, якщо
+\begin{equation}
+    \label{eq:10.1}    
+    \exists C > 0: |f(x)| \le C \|x\|_E.
+\end{equation}
+\end{definition}
+
+\begin{definition}
+Найменша серед усіх додатних констант, що
+задовольняють нерівність \eqref{eq:10.1} називається \vocab{нормою}
+функціонала:
+\begin{equation*}
+    \|f\| = \sup_{x \ne \vec 0} \frac{|f(x)|}{\|x\|}.
+\end{equation*}
+\end{definition}
+
+\begin{definition}
+Нехай $E_1$ і $E_2$ --- нормовані простори. На
+множині $D \subset E_1$ задано \vocab{оператор}, або відображення $A$, із
+значеннями в $E_2$, якщо кожному елементу $x \in D$
+поставлено у відповідність елемент $y = A x \in E_2$.
+\end{definition}
+
+\begin{definition}
+Оператор $A$ називається \vocab{лінійним}, якщо
+\begin{enumerate}
+    \item $\alpha x_1 + \beta x_2 \in D$
+    для довільних $x_1, x_2 \in D$,
+    де $\alpha, \beta$ --- дійсні числа;
+    \item $A(\alpha x_1 + \beta x_2) = \alpha A(x_1) + \beta A(x_2)$
+    для довільних $x_1, x_2 \in D$,
+    де $\alpha, \beta$ --- дійсні числа.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+Якщо $A$ --- лінійний оператор з $E_1$ в $E_2$ такий,
+що $D = E_1$, та з умови $x_n \to x_0$, $x_n, x_0 \in E_1$ випливає, що
+$A(x_n) \to A(x_0)$ в $E_2$, то $A$ називається \vocab{лінійним
+неперервним оператором}.
+\end{definition}
+
+\begin{definition}
+Оператор $A$ називається \vocab{обмеженим} в
+просторі $E$, якщо існує така константа $C$, що 
+\begin{equation}
+    \label{eq:10.2}
+    \|A x\| \le C \|x\|.
+\end{equation}
+\end{definition}
+
+\begin{definition}
+Найменша константа $C$,
+яка задовольняє нерівність \eqref{eq:10.2},
+називається \vocab{нормою} оператора $A$.
+\end{definition}
+
+\begin{theorem}
+Лінійний оператор, заданий на лінійному
+нормованому просторі, є неперервним тоді і тільки тоді,
+коли він обмежений.
+\end{theorem}
+
+\begin{proof}
+Необхідність. Припустимо, що $A$ ---
+неперервний, лінійний, але не обмежений оператор. Тоді
+\begin{equation*}
+    \forall n \in \NN \exists x_n \in E: \|Ax_n\|_F > n \|x_n\|_E.
+\end{equation*}
+
+Покладемо
+\begin{equation*}
+    \xi_n = \frac{1}{n} \frac{x_n}{\|x_n\|}.
+\end{equation*}
+
+За побудовою
+\begin{equation*}
+    \xi_n = \frac{1}{n} \frac{x_n}{\|x_n\|} \to 0, \quad n \to \infty.
+\end{equation*}
+
+Оцінимо норму елемента $\|A \xi_n\|_F$:
+\begin{equation*}
+    \|A \xi_n\|_F = \left\| A \left( \frac{1}{n} \frac{x_n}{\|x_n\|} \right) \right\| =
+    \frac{1}{n \|x_n\|_E} \|A x_n\|_F > \frac{n \|x_n\|_E}{n \|x_n\|_E} = 1.
+\end{equation*}
+
+З цього випливає, що
+\begin{equation*}
+    \lim_{n \to \infty} \|A \xi_n\|_F \ne 0 \implies
+    \lim_{n \to \infty} A \xi_n \ne 0.
+\end{equation*}
+
+Тобто $A$ --- лінійний оператор, $A \vec 0 = 0$ і у той же час
+$\xi_n \to 0$, але $A \xi_n \ne\to 0$, тобто $A$ --- не неперервний.
+Отримане протиріччя доводить, що оператор $A$ є обмеженим.
+
+Достатність. $A$ --- обмежений оператор, а тому
+\begin{equation*}
+    \exists C > 0: \forall x \in E: \|A x\|_F \le C \|x\|_E.
+\end{equation*}
+
+Нехай
+\begin{multline*}
+    x_n \to x \implies \|x_n - x\|_E \to 0 \implies \\
+    \|Ax_n - Ax\|_F = \|A (x_n - x)\|_F \le C \|x - x_n\|_E \to 0 \implies \\
+    \|A x_n - A x\|_F \to 0 \implies A x_n \to A x, \quad n \to \infty.
+\end{multline*}
+
+Це означає, що оператор $A$ --- неперервний. 
+\end{proof}
+
+\section{Простір операторів}
+
+\begin{definition}
+Лінійні оператори $A$, що відображають
+нормований простір $E$ в нормований простір $F$, утворюють
+\vocab{нормований простір операторів} $\LL(E, F)$ з нормою
+\begin{equation*}
+    \|A\| = \sup_{\|x\| \ne 0} \frac{\|A x\|_F}{\|x\|_E} =
+    \sup_{\|x\| = 1} \|A x\|_F = \sup_{\|x\| \le 1} \|Ax\|_F.
+\end{equation*}
+\end{definition}
+
+\begin{theorem}
+Нехай $A$ --- лінійний обмежений оператор,
+що діє із нормованого простору $E$ в банахів простір $F$. Якщо
+область визначення оператора $D(A)$ щільна в $E$, то існує
+такий лінійний обмежений оператор $\closure A: E \to F$ такий що,
+$\closure A x = A x$, $\forall x \in D(A)$ і $\|\closure A\| = \|A\|$.
+\end{theorem}
+
+\begin{proof}
+Нехай $x \in E \setminus D(A)$. Оскільки $\closure D(A) = E$, то
+\begin{equation*}
+    \exists \{x_n\}_{n = 1}^\infty \subset D(A):
+    \lim_{n \to \infty} x_n = x.
+\end{equation*}
+
+Із нерівності
+\begin{equation*}
+    \|Ax_n - Ax_m\|_F \le \|A\| \cdot \|x_n - x_m\|_E.
+\end{equation*}
+і обмеженості оператора $A$ випливає, що
+\begin{equation*}
+    \forall \epsilon > 0 \exists N(\epsilon):
+    \forall n, m \ge N:
+    \|A x_n - A x_m\|_F \le \|A\| \cdot \|x_n - x_m\|_E < \epsilon.
+\end{equation*}
+
+Це означає, що послідовність $\{Ax_n\}_{n = 1}^\infty$ є фундаментальною.
+Оскільки простір $F$ є повним, ця послідовність є збіжною:
+\begin{equation*}
+    \exists \closure A x = \lim_{n \to \infty} A_n x.
+\end{equation*}
+
+Покажемо, що цей елемент визначений коректно, тобто не
+залежить від вибору послідовності $\{x_n\}_{n = 1}^\infty \subset D(A)$:
+$\lim_{n \to \infty} x_n = x$.
+Припустимо, що існує ще одна послідовність $\{x_n'\}_{n = 1}^\infty \subset D(A)$,
+яка збігається до елемента $x$:
+\begin{equation*}
+    \lim_{n \to \infty} x_n' = x.
+\end{equation*}
+
+Нехай
+\begin{equation*}
+    y = \lim_{n \to \infty} A x_n, \quad y' = \lim_{n \to \infty} A x_n'.
+\end{equation*}
+
+З того що
+\begin{equation*}
+    \lim_{n \to \infty} \|Ax_n - Ax_n'\|_F \le
+    \lim_{n \to \infty} \|A\| \cdot \|x_n - x_n'\|_E = 0,
+\end{equation*}
+випливає
+\begin{multline*}
+    \|y - y'\|_F = \lim_{n \to \infty} \|y - y'\|_F \le \\
+    \lim_{n \to \infty} \|y - A x_n\|_F +
+    \lim_{n \to \infty} \|A x_n - A x_n'\|_F +
+    \lim_{n \to \infty} \|A x_n' - y'\|_F = 0.
+\end{multline*}
+
+Отже, $y = y'$.
+
+Лінійність оператора $\closure A$ випливає із лінійності оператора
+$A$ і властивостей границь.
+
+Оскільки оператор $\closure A$ збігається з оператором $A$ в області
+визначення $D(A)$, але має більш широку область визначення,
+\begin{equation*}
+    \|A\| \le \|\closure A\|.
+\end{equation*}
+
+З іншого боку,
+\begin{equation*}
+    \|Ax_n\|_F \le \|A\| \cdot \|x_n\|_E, \quad \forall x_n \in E.
+\end{equation*}
+
+Отже,
+\begin{equation*}
+    \lim_{n \to \infty} \|Ax_n\|_F =
+    \left\| A \left( \lim_{n \to \infty} x_n \right) \right\| =
+    \| \closure A x \|_F \le 
+    \|A\| \cdot \left\| \lim_{n \to \infty} x_n \right\| = 
+    \|A\| \cdot \|x\|_E, \quad x \in E.
+\end{equation*}
+
+Це означає, що
+\begin{equation*}
+    \|\closure A\| \le \|A\|.
+\end{equation*}
+Порівнюючи оцінки $\|\closure A\|$, отримуємо
+\begin{equation*}
+    \|\closure A\| = \|A\|. \qedhere
+\end{equation*}
+\end{proof}
+
+\begin{theorem}[Хана---Банаха в нормованому просторі] Нехай
+$E$ --- дійсний нормований простір, $L$ --- його підпростір,
+$f_0$ --- обмежений лінійний функціонал на $L$. Цей лінійний
+функціонал можна продовжити до деякого лінійного
+функціонала $f$, заданого на всьому просторі $E$ без
+збільшення норми:
+\begin{equation*}
+    \|f\| = \|f_0\|.
+\end{equation*}
+\end{theorem}
+
+\begin{proof}
+Нехай $f_0$ --- обмежений лінійний функціонал на $L$. Значить,
+\begin{equation*}
+    |f_0(x)| \le \|f_0\| \cdot \|x\|, \forall x \in L.
+\end{equation*}
+
+За теоремою Хана---Банаха в лінійному просторі
+\begin{equation*}
+    \exists f \text{ --- продовження } f_0 \text{ на } E:
+    |f(x)| \le \|f_0\| \cdot \|x\|, \forall x \in E.
+\end{equation*}
+
+З цього випливає, що
+\begin{equation*}
+    \|f\| \le \|f_0\|.
+\end{equation*}
+
+З іншого боку, $L \subset E$, а тому
+\begin{equation*}
+    \|f\| = \sup_{x \ne \vec 0, x \in E} \frac{|f(x)|}{\|x\|} \ge
+    \sup_{x \ne \vec 0, x \in L} \frac{|f(x)|}{\|x\|} =
+    \sup_{x \ne \vec 0, x \in L} \frac{|f_0(x)|}{\|x\|} = \|f_0\|.
+\end{equation*}
+
+Отже, $\|f\| = \|f_0\|$.
+\end{proof}
+
+\section{Література}
+
+\begin{enumerate}[label={[\arabic*]}]
+\item \textbf{Садовничий~В.~А.}
+Теория операторов /
+В.~А.~Садовничий ---
+М.: Изд-во Моск. ун-та, 1986 (стр.~96--102).
+\end{enumerate}

@@ -1,0 +1,371 @@
+\chapter{Принцип відкритості відображення}
+
+\section{Обмеженість на всюди щільній множині}
+
+\begin{lemma}
+Нехай $E$ і $F$ --- банахові простори,
+$A \in \LL(E, F)$, $E_n$ --- множина тих точок $x \in E$, для яких
+\begin{equation*}
+    \|A x\|_F \le n \|x\|_E, \quad n = 1, 2, \dots    
+\end{equation*}
+
+Тоді $E = \Bigcup_{n = 1}^\infty E_n$ і принаймні одна із множин $E_n$ є всюди
+щільною в $E$.
+\end{lemma}
+
+\begin{proof}
+Спочатку пересвідчимось в тому, що
+\begin{equation*}
+    \forall x \in E: \exists n \in \NN: x \in E_n.
+\end{equation*}
+
+Очевидно, що $E_n \ne \emptyset$, оскільки $\forall n \in \NN: 0 \in E$.
+Якщо $x \ne 0$, позначимо через $n$ найменше натуральне число, що
+задовольняє нерівність
+\begin{equation*}
+    n \ge \frac{\|A x\|_F}{\|x\|_E}.
+\end{equation*}
+
+Тоді
+\begin{equation*}
+    \forall x \in E: \exists n \in \NN: \|Ax\|_F \le n \|x\|_E.
+\end{equation*}
+
+Звідси випливає, що
+\begin{equation*}
+    E = \Bigcup_{n = 1}^\infty E_n
+\end{equation*}
+
+Згідно теореми Бера, банахів простір $E$ не може бути
+поданий у вигляді не більш ніж зліченного об’єднання ніде
+не щільних множин. Значить, одна із множин $E_{n_0}$ не є ніде
+не щільною. Отже, існує відкрита куля $S(x_0, r)$, така що
+$S(x_0, r) \subset \closure E_{n_0}$.
+
+Розглянемо замкнену кулю $\closure S(x_1, r_1)$ з центром
+$x_1 \in E_{n_0}$, таку що
+\begin{equation*}
+    \closure S(x_1, r_1) \subset S(x_0, r).
+\end{equation*}
+
+Візьмемо довільний елемент $x$ з нормою $\|x\| = r_1$. Оскільки
+\begin{equation*}
+    \|x_1 + x - x_1\|_E = \|x\|_E = r_1,
+\end{equation*}
+отримаємо, що $x_1 + x \in \closure S(x_1, r_1)$. Отже,
+$\closure S(x_1, r_1) \subset \closure E_{n_0}$, звідки
+\begin{equation*}
+    \exists \{y_k\}_{k = 1}^\infty \subset S(x_1, r_1) \cap E_{n_0}:
+    y_k \to x_1 + x, \quad k \to \infty.
+\end{equation*}
+
+Якщо $x_1 + x \in E_{n_0}$, ця послідовність може бути стаціонарною.
+Таким чином, $\exists \{x_k\}_{k = 1}^\infty = \{y_k - x_1\}_{k = 1}^\infty$, така
+що
+\begin{equation*}
+    \lim_{k \to \infty} x_l = \lim_{k \to \infty} y_k - x_1 = x.
+\end{equation*}
+
+Оскільки
+\begin{equation*}
+    \|x\|_E = r_1, \quad \|x_k\|_E \le r_1,
+\end{equation*}
+можна вважати, що
+\begin{equation}
+    \label{eq:14.1}
+    \forall k \in \NN: \|x_k\|_E \ge \frac{r_1}{2}
+\end{equation}
+
+Із умов $y_k \in E_{n_0}$, $x_1 \in E_{n_0}$, $y_k = x_k + x_1$
+маємо наступні оцінки
+\begin{align}
+    \label{eq:14.2}
+    \|Ax_k\|_F &= \|A y_k - A x_1\|_F \le \|A y_k\|_F + \|A x_1\|_F \le n_0 (\|y_k\|_E + \|x_1\|_E). \\
+    \label{eq:14.3}
+    \|y_k\|_E &= \|x_k + x_1\|_E \le \|x_k\|_E + \|x_1\|_E \le r_1 + \|x_1\|_E.
+\end{align}
+
+Беручи до уваги умову \eqref{eq:14.1} і оцінки \eqref{eq:14.2}, \eqref{eq:14.3}, маємо
+\begin{equation*}
+    \|A x_k\|_F \le
+    n_0 (r_1 + 2 \|x_1\|_E) \le
+    \frac{2 n_0|}{r_1} (r_1 + 2 \|x_1\|_E) \|x_k\|_E.
+\end{equation*}
+
+Нехай $n$ --- найменше натуральне число, що задовольняє нерівність
+\begin{equation*}
+    n \ge \frac{2 n_0}{r_1} (r_1 + 2 \|x_1\|_E).
+\end{equation*}
+
+Тоді $\|Ax_k\|_F \le n \|x_k\|_E$, тобто $x_k \in E_n$.
+
+Таким чином, довільний елемент $x$, норма якого дорівнює
+$r_1$ можна апроксимувати елементами множини $E_n$.
+
+Нехай $x \in E$ --- довільний ненульовий елемент.
+Розглянемо точку 
+\begin{equation*}
+    \xi = r_1 \frac{x}{\|x\|_E}.
+\end{equation*}
+
+Вище ми довели, що існує послідовність
+\begin{equation*}
+    \{\xi_k\}_{k = 1}^\infty: \xi_k \in E_n, \lim_{k \to \infty} \xi_k = \xi.
+\end{equation*}
+
+Тоді
+\begin{equation*}
+    \lim_{k \to \infty} x_k = \lim_{k \to \infty} \xi_k \frac{\|x\|_E}{r_1} = x,
+\end{equation*}
+звідки
+\begin{equation*}
+    \|Ax_k\|_F = \frac{\|x\|_E}{r_1} \|A\xi_k\|_F \le \frac{\|x\|_E}{r_1} n \|\xi_k\|_E = n \|x_k\|_E.
+\end{equation*}
+
+Отже, $x_k \in E_n$ і $\lim_{k \to \infty} x_k = x$, $\forall x \in E$.
+Таким чином, множина $E_n$ скрізь щільна в $E$.
+\end{proof}
+
+\section{Лінійний обмежений обернений оператор}
+
+\begin{theorem}[Банаха, про обернений оператор]
+Нехай $E$ і $F$ --- банахові простори,
+$A$ --- лінійний обмежений взаємно-однозначний оператор,
+що діє із $E$ в $F$.
+Тоді існує лінійний обмежений обернений
+оператор $A\inv: F \to E$.
+\end{theorem}
+
+\begin{proof}
+Покажемо лінійність оберненого оператора.
+Покладемо $\forall x_1, x_2 \in E$: $A x_1 = y_1$, $A x_2 = y_2$.
+Внаслідок лінійності оператора $A$
+\begin{equation}
+    \label{eq:14.4}
+    \forall \alpha, \beta \in \RR:
+    A(\alpha x_1 + \beta x_2) =
+    \alpha y_1 + \beta y_2.
+\end{equation}
+
+Оскільки $A\inv y_1 = x_1$, $A\inv y_2 = x_2$, помножимо ці рівності на
+$\alpha$ і $\beta$ відповідно і складемо результати:
+\begin{equation}
+    \label{eq:14.5}
+    \alpha A\inv y_1 + \beta A\inv y_2 =
+    \alpha x_1 + \beta x_2.
+\end{equation}
+
+Із рівності \eqref{eq:14.4} і означення оберненого оператора випливає, що
+\begin{equation*}
+    \alpha x_1 + \beta x_2 = A\inv (\alpha y_1 + \beta y_2).
+\end{equation*}
+
+Беручи до уваги рівність \eqref{eq:14.5}, отримуємо
+\begin{equation*}
+    A\inv (\alpha y_1 + \beta y_2) = \alpha A\inv y_1 + \beta A\inv y_2.
+\end{equation*}
+
+Отже, оператор $A\inv$ є лінійним. Тепер доведемо його обмеженість.
+
+За лемою 14.1 банахів простір $F$ можна подати у вигляді
+\begin{equation*}
+    F = \Bigcup_k F_k
+\end{equation*}
+де $F_k$ --- множина таких елементів $y \in F$, для яких
+\begin{equation*}
+    \|A\inv y\|_E \le k \|y\|_F,
+\end{equation*}
+до того ж одна із множин $F_k$ скрізь щільна в $F$. Позначимо
+цю множину через $F_n$. Візьмемо довільну точку $y \in F$, а її
+норму позначимо як $\|y\|_F = a$. Знайдемо таку точку
+$y_1 \in F_n$, щоб виконувались нерівності
+\begin{equation*}
+    \|y - y_1\|_F \le \frac{a}{2}, \quad \|y_1\|_F \le a.
+\end{equation*}
+
+Такий вибір можливий, оскільки множина $\closure S(0, a) \cap F_n$ є
+щільною в замкненій кулі $\closure S(0, a)$ і $y \in \closure S(0, a)$. Знайдемо
+такий елемент $y_2 \in F_n$, щоб виконувались умови
+\begin{equation*}
+    \|y - y_1 - y_2\|_F \le \frac{a}{2^2}, \quad \|y_1\|_F \le \frac{a}{2}.
+\end{equation*}
+
+Продовжуючи вибір, побудуємо елементи $y_k \in F_n$, такі що
+\begin{equation*}
+    \|y - (y_1 + \dots + y_k)\|_F \le \frac{a}{2^k}, \quad \|y_k\|_F \le \frac{a}{2^{k - 1}}.
+\end{equation*}
+
+Внаслідок вибору елементів $y_k$ маємо
+\begin{equation*}
+    \lim_{m \to \infty} \left\| y - \sum_{k = 1}^m y_k \right\|_F = 0.
+\end{equation*}
+
+Це означає, що ряд $\sum_{k = 1}^\infty y_k$ збігається до елемента $y$.
+
+Покладемо $x_k = A\inv y_k$. Тоді отримуємо оцінку
+\begin{equation*}
+    \|x_k\|_E \le n \|y_k\|_F \le \frac{n a}{2^{k - 1}}.
+\end{equation*}
+
+Оскільки
+\begin{multline*}
+    \|v_{k + p} - v_k\|_E =
+    \left\| \sum_{i = k + 1}^{k + p} x_i \right\|_E \le
+    \sum_{i = k + 1}^{k + p} \|x_i\|_E \le
+    \sum_{i = k + 1}^\infty \|x_i\|_E \le \\
+    \sum_{i = k + 1}^\infty \frac{n a}{2^{i - 1}} =
+    \sum_{i = 0}^\infty \frac{n a}{2^{i + k}} =
+    \frac{n a}{2^k} \sum_{i = 0}^\infty \frac{1}{2^i} =
+    \frac{n a}{2^k} \frac{1}{1 - \tfrac{1}{2}} =
+    \frac{n a}{2^{k - 1}},
+\end{multline*}
+а простір $E$ --- повний, послідовність $\{v_k\}_{k = 1}^\infty$, де
+$v_k = \sum_{i = 1}^k x_i$ збігається до деякої границі $x \in E$. Отже,
+\begin{equation*}
+    x = \lim_{k \to \infty} \sum_{i = 1}^k x_i = \sum_{i = 1}^\infty x_i.
+\end{equation*}
+
+Внаслідок лінійності і неперервності оператора $A$, маємо
+\begin{equation*}
+    A x =
+    A \left( \lim_{k \to \infty} \sum_{i = 1}^k x_i \right) =
+    \lim_{k \to \infty} \sum_{i = 1}^k A x_i =
+    \lim_{k \to \infty} \sum_{i = 1}^k y_i = y.
+\end{equation*}
+
+Звідси отримуємо, що
+\begin{equation*}
+    \|A\inv y\|_E = \|x\|_E =
+    \lim_{k \to \infty} \left\| \sum_{i = 1}^k x_i \right\|_E \le
+    \lim_{k \to \infty} \sum_{i = 1}^k \|x_i\|_E \le
+    \sum_{i = 1}^\infty \frac{n a}{2^{i - 1}} =
+    2 n a = 2 n \|y\|_E.
+\end{equation*}
+ 
+Оскільки $y$ --- довільний елемент із простору $F$,
+обмеженість оператора $A\inv$ доведено. 
+\end{proof}
+
+\begin{corollary}
+Якщо $E$ і $F$ --- банахові простори,
+$A \in \LL(E, F)$, то образ будь-якого околу нуля простору $E$
+містить деякий окіл нуля простору $F$.
+\end{corollary}
+
+\section{Обернений до наближеного і резольвента}
+
+Нехай $E$, $F$ --- банахові простори. Відокремимо в
+банаховому просторі $\LL(E, F)$ множину операторів
+$\mathfrak{M}(E, F)$, що мають обернений оператор.
+
+\begin{theorem}
+Нехай $A_0 \in \mathfrak{M}(E, F)$, $\Delta \in \LL(E, F)$ і
+$\|\Delta\| \cdot \|A_0\inv\| < 1$.
+Тоді $A = A_0 + \Delta \in \mathfrak{M}(E, F)$.
+\end{theorem}
+
+\begin{proof}
+Зафіксуємо довільний $y \in F$ і розглянемо
+відображення $B: E \to E$, таке що $B x = A_0\inv y - A_0\inv \Delta x$.
+
+Оскільки $\|\Delta\| \cdot \|A_0\inv\| < 1$, відображення $B$ є стискаючим.
+Простір $E$ --- банахів, тому існує єдина нерухома точка відображення $B$
+\begin{equation*}
+    x = B x = A_0\inv y - A_0\inv \Delta x.
+\end{equation*}
+
+Отже,
+\begin{equation*}
+    A x = A_0 x + \Delta x = y.
+\end{equation*}
+
+Якщо існує ще одна точка $x'$, така що $A x' = y$,
+то $x'$ також є нерухомою точкою відображення $B$.
+Оскільки це відображення має єдину нерухому точку,
+це означає, що $x = x'$.
+Отже, для будь-якого $y \in F$ рівняння $A x = y$
+має єдиний розв’язок в просторі $E$.
+Значить, оператор $A$ має обернений оператор $A\inv$.
+За теоремою Банаха про обернений оператор $A\inv$ є обмеженим. 
+\end{proof}
+
+\begin{theorem}
+Нехай $E$ --- банахів простір,
+$I$ --- тотожній оператор, що діє в $E$,
+$A \in \LL(E, E)$ і $\|A\| < 1$.
+Тоді оператор $(I - A)\inv$ існує, обмежений
+і може бути поданий у вигляді
+\begin{equation*}
+    (I - A)\inv = \sum_{k = 0}^\infty A^k.
+\end{equation*}
+\end{theorem}
+
+\begin{proof}
+Спочатку зауважимо, що із $\|A\| < 1$ випливає
+\begin{equation*}
+    \sum_{k = 0}^\infty \|A^k\| \le \sum_{k = 0}^\infty \|A\|^k < \infty.
+\end{equation*}
+
+Простір $E$ --- банахів, тому із збіжності ряду $\sum_{k = 0}^\infty \|A^k\|$
+випливає, що $\sum_{k = 0}^\infty A^k \in \LL(E, E)$. Для довільного $n \in \NN$:
+\begin{equation*}
+    (I - A) \sum_{k = 0}^n A^k = \sum_{k = 0}^n A^k (I - A) = I - A^{n + 1}.
+\end{equation*}
+
+Перейдемо до границі при $n \to \infty$ і зважимо на те, що
+$\|A^{n + 1}\| \le \|A\|^{n +1} \to 0$. Отже,
+\begin{equation*}
+    (I - A) \sum_{k = 0}^\infty A^k = \sum_{k = 0}^\infty A^k (I - A) = I.
+\end{equation*}
+
+Звідси випливає, що
+\begin{equation*}
+    (I - A)\inv = \sum_{k = 0}^\infty A^k. \qedhere
+\end{equation*}
+\end{proof}
+
+\section{Принцип відкритості відображення}
+
+\begin{theorem}[принцип відкритості відображення]
+Лінійне сюр’єктивне і неперервне відображення банахова
+простору $E$ на банахів простір $F$ є відкритим
+відображенням.
+\end{theorem}
+
+\begin{proof}
+Покажемо, що образ будь-якої відкритої
+множини простору $E$ є відкритою множиною простору $F$.
+Нехай $G \subset E$ --- непорожня відкрита множина, $x \in G$, а
+$G_0$ --- окіл нуля в $E$, такий що $x + G_0 \in G$. Розглянемо
+окіл нуля $G_1$ в просторі $F$, такий що $G_1 \subset A G_0$, який існує
+завдяки наслідку 14.1. Мають місце включення
+\begin{equation*}
+    A x + G_1 \subset A x + A G_0 = A (x + G_0) \subset A G.
+\end{equation*}
+
+Оскільки $A x + G_1$ є околом точки $A x$, а $x$ --- довільна
+точка із множини $G$ і $A x \in A G$, то множина $A G$ разом із
+кожною своєю точкою містить її деякий окіл $W$. Отже,
+множина $A G$ є відкритою і відображення $A$ є відкритим.
+\end{proof}
+
+\section{Література}
+
+\begin{enumerate}[label={[\arabic*]}]
+\item \textbf{Березанский~Ю.~М.}
+Функциональный анализ /
+Ю.~М.~Березанский, Г.~Ф.~Ус, З.~Г.~Шефтель ---
+К.: Выща школа, 1990 (стр.~254--255).
+\item \textbf{Ляшко~И.~И.}
+Основы классического и современного математического анализа /
+И.~И.~Ляшко, В.~Ф~Емельянов, А.~К.~Боярчук. ---
+К.: Вища школа, 1988 (стр.~578--581).
+\item \textbf{Садовничий~В.~А.}
+Теория операторов /
+В.~А.~Садовничий ---
+М.: Изд-во Моск. ун-та, 1986 (стр.~102--106).
+\item \textbf{Колмогоров~А.~Н.}
+Элементы теории функций и функционального анализа. 5-е изд. /
+А.~Н.~Колмогоров, С.~В.~Фомин ---
+М.: Наука, 1981 (стр.~224--233).
+\end{enumerate}

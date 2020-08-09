@@ -1,0 +1,314 @@
+\chapter{Принцип рівномірної обмеженості}
+
+В цій лекції ми розглянемо види збіжності послідовностей
+лінійних неперервних операторів і з’ясуємо, коли простір
+$\LL(E, F)$ є банаховим в розумінні тої чи іншої збіжності.
+
+\section{Види збіжності послідовностей операторів}
+
+\begin{definition}
+Послідовність операторів $\{A_n\}_{n = 1}^\infty$, що діють із
+нормованого простору $E$ в нормований простір $F$,
+\vocab{поточково збігається} до оператора $A$ в просторі $\LL(E, F)$
+при $n \to \infty$, якщо $\forall x \in E$: $\lim_{n \to \infty} A_n x = A x$.
+\end{definition}
+
+\begin{definition}
+Послідовність операторів $\{A_n\}_{n = 1}^\infty$, що діють із
+нормованого простору $E$ в нормований простір $F$,
+\vocab{рівномірно збігається} до оператора $A$ в просторі $\LL(E, F)$
+при $n \to \infty$, якщо $\lim_{n \to \infty} \|A_n - A\| = 0$.
+\end{definition}
+
+\begin{remark}
+Якщо $F = \RR$, то простір $\LL(E, \RR)$ є
+спряженим простором, поточкова збіжність є аналогом
+слабкої збіжності в спряженому просторі, а рівномірна
+збіжність є аналогом сильної збіжності в спряженому
+просторі.
+\end{remark}
+
+\begin{lemma}
+Якщо послідовність лінійних обмежених
+операторів $A_n: E \to F$, де $E, F$ --- нормовані простори, є
+такою, що послідовність $\{\|A_n\|\}_{n = 1}^\infty$
+є необмеженою, то послідовність $\{\|A_n x\|\}_{n = 1}^\infty$
+є необмеженою в будь-якій замкненій кулі.
+\end{lemma}
+
+\begin{proof}
+Припустимо супротивне: послідовність
+$\{\|A_n x\|\}_{n = 1}^\infty$
+є обмеженою в деякій замкненій кулі $\closure S(x_0, \epsilon)$:
+\begin{equation*}
+    \exists (\closure S(x_0, \epsilon), C > 0):
+    \forall n \in N:
+    \forall x \in \closure(x_0, \epsilon):
+    \|A_n x\|_F \le C.
+\end{equation*}
+
+Кожному елементу $\xi \in E$ поставимо у відповідність елемент
+$x = \frac{\epsilon}{\|\xi\|_E} \xi + x_0$, якщо $\xi \ne 0$.
+Елементу $\xi = 0$ поставимо у відповідність елемент $x = x_0$.
+\begin{equation*}
+    \xi \ne 0 \implies
+    \|x - x_0\|_E =
+    \left\| \frac{\epsilon}{\|\xi\|_E} \xi + x_0 - x_0 \right\|_E =
+    \left\| \frac{\epsilon}{\|\xi\|_E} \xi \right\|_E =
+    \epsilon.
+\end{equation*}
+
+Це означає, що для довільних $\xi \in E$ всі елементи
+$x \in \closure S(x_0, \epsilon)$.
+
+Оцінимо наступну величину (використовуючи допоміжну
+нерівність $\|x\| - \|y\| \le \|x + y\|$.
+\begin{equation}
+    \left| \frac{\epsilon}{\|\xi\|_E} \|A_n \xi\|_F - \|A_n x_0\|_F \right| \le
+    \left\| \frac{\epsilon}{\|\xi\|_E} A_n \xi + A_n x_0 \right\|_F =
+    \left\| A_n \left( \frac{\epsilon}{\|\xi\|_E} \xi + x_0 \right) \right\|_F \le C.
+\end{equation}
+
+Отже,
+\begin{equation*}
+    \frac{\epsilon}{\|\xi\|_E} \|A_n \xi\|_F - \|A_n x_0\|_F \le C.
+\end{equation*}
+
+Звідси випливає, що
+\begin{equation*}
+    \|A_n \xi\|_F \le
+    \frac{C + \|A_n x_0\|_F}{\epsilon} \|\xi\|_E \le
+    \frac{2 C}{\epsilon} \|\xi\|_E.
+\end{equation*}
+
+Отже,
+\begin{equation*}
+    \exists C_1 = \frac{2 C}{\epsilon} > 0:
+    \forall \xi \in E:
+    \|A_n \xi\|_E \le C_1 \|\xi\|_E \implies
+    \|A_n\| \le C_1.
+\end{equation*}
+
+Отримане протиріччя доводить лему.
+\end{proof}
+
+\begin{theorem}
+[Банаха---Штейнгауза] Нехай послідовність
+лінійних обмежених операторів $\{A_n\}_{n = 1}^\infty$, що відображають
+банахів простір $E$ в нормований простір $F$, поточково
+збігається до оператора $A$ при $n \to \infty$. Тоді послідовність
+$\{\|A_n\|\}_{n = 1}^\infty$ є обмеженою, оператор $A$ є лінійним і
+неперервним, а $A_n x \to A x$ рівномірно по $n$ на кожному
+компакті $K \subset E$ (тобто $n$ не залежить від $x$).
+\end{theorem}
+
+\begin{proof}
+Припустимо, що послідовність $\{\|A_n\|\}_{n = 1}^\infty$ є необмеженою.
+Тоді за лемою 13.1 послідовність $\{\|A_n x\|\}_{n = 1}^\infty$
+є необмеженою на довільній замкненій кулі $\closure S(x_0, \epsilon_0)$.
+
+Отже, 
+\begin{equation*}
+    \exists (n_1 \in \NN, x_1 \in \closure S(x_0, \epsilon_0): \|A_{n_1} x_1\|_F > 1.    
+\end{equation*}
+
+Оскільки $A_{n_1}$ --- неперервний оператор,
+\begin{equation*}
+    \exists \closure S(x_1, \epsilon_1) \subset \closure S(x_0, \epsilon_0):
+    \forall x \in \closure S(x_1, \epsilon_1): \|A_{n_1} x\|_F > 1.
+\end{equation*}
+
+На кулі $\closure S(x_1, \epsilon_1)$ послідовність $\{\|A_n x\|_F\}_{n = 1}^\infty$
+також є необмеженою. Отже,
+\begin{equation*}
+    \exists \closure S(x_2, \epsilon_2) \subset \closure S(x_1, \epsilon_1):
+    \forall x \in \closure S(x_2, \epsilon_2): \|A_{n_2} x\|_F > 2.
+\end{equation*}
+
+Нехай $A_{n_1}, A_{n_2}, \dots, A_{n_k}$ і $x_1, x_2, \dots, x_k$:
+\begin{equation*}
+    n_1 < n_2 < \dots < n_k, \quad
+    \closure S(x_0, \epsilon_0) \supset 
+    \closure S(x_1, \epsilon_1) \supset
+    \dots \supset \closure S(x_k, \epsilon_k).
+\end{equation*}
+
+Продовжуючи цей процес при $k \to \infty$, отримуємо
+послідовність вкладених замкнених куль, таких що
+\begin{equation*}
+    \forall x \in \closure S(x_k, \epsilon_k): \|A_{n_k} x\|_F > k, \quad \epsilon_k \to 0.
+\end{equation*}
+
+Оскільки $E$ --- повний простір, за принципом вкладених куль
+\begin{equation*}
+    \exists x^\star \in \Bigcap_{k = 1}^\infty S(x_k, \epsilon_k):
+    \|A_{n_k} x^\star\|_F \ge k, \quad \forall k \in \NN.
+\end{equation*}
+
+Звідси випливає, що $\exists x^\star \in E$ така, що послідовність $\{A_n x^\star\}$
+не збігається. Це суперечить умові теореми, згідно якої
+послідовність операторів $\{A_n x\}_{n = 1}^\infty$
+поточково збігається в кожній точці простору $E$.
+
+Покажемо, що оператор $A$ --- лінійний. Оскільки
+\begin{equation*}
+    A_n(x + y) = A_n(x) + A_n(y), \quad A_n(\lambda x) = \lambda A_n(x),
+\end{equation*}
+маємо
+\begin{gather*}
+    A(x + y) =
+    \lim_{n \to \infty} A_n(x + y) =
+    \lim_{n \to \infty} A_n(x) + \lim_{n \to \infty} A_n(y) =
+    A x + A y. \\
+    A(\lambda x) =
+    \lim_{n \to \infty} A_n(\lambda x) =
+    \lambda \lim_{n \to \infty} A_n(x) =
+    \lambda A x.
+\end{gather*}
+
+Крім того,
+\begin{equation*}
+    \|A_n x\|_F \le C \|x\|_E \implies
+    \lim_{n \to \infty} \|A_n x\|_F =
+    \left\| \lim_{n \to \infty} A_n x \right\|_F =
+    \|A x\|_E \le C \|x\|_E.
+\end{equation*}
+
+Отже, $A$ --- лінійний і обмежений, а значить, неперервний.
+
+Нехай $K \subset E$ --- компакт, $\epsilon > 0$. За теоремою Хаусдорфа
+існує скінчена $\frac{\epsilon}{3 C}$-сітка $M$:
+\begin{equation*}
+    \forall x \in K:
+    \exists x_\alpha \in M, \alpha \in A:
+    \|x - x_\alpha\|_E < \frac{\epsilon}{3 C},
+\end{equation*}
+де $A$ --- скінчена множина.
+
+Оскільки послідовність $\{A_n x\}_{n = 1}^\infty$
+поточково збігається в
+кожній точці простору $E$, то вона збігається і в кожній точці
+сітки $M$:
+\begin{equation*}
+    \forall x_\alpha \in M:
+    \exists n_\alpha:
+    \forall n \ge n_\alpha:
+    \|A_n x_\alpha - A x_\alpha\|_F < \frac{\epsilon}{3}.
+\end{equation*}
+
+Нехай $n_0 = \max_{\alpha \in A} n_\alpha$ (сітка $M$ є скінченою, тому максимум існує).
+Тоді $\forall n \ge n_0$, $\forall x \in S\left(x_\alpha, \frac{\epsilon}{3C}\right)$
+\begin{multline*}
+    \|A_n x - A x\|_F \le
+    \|A_n x - A_n x_\alpha + A_n x_\alpha - A x_\alpha + A x_\alpha - A x\|_F \le \\
+    \|A_n x - A_n x_\alpha\|_F + \|A_n x_\alpha - A x_\alpha\|_F + \|A x_\alpha - A x\|_F < \\
+    C \|x - x_\alpha\|_F + \frac{\epsilon}{3} + C \|x - x_\alpha\|_F =
+    \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon.
+\end{multline*}
+
+Отже, $\forall n \ge n_0$, $\forall x \in K$: $\|A_n x - A x\|_F < \epsilon$,
+до того ж номер $n_0$ не залежить від точки $x$. Це означає, що
+$A_n x \to A x$ рівномірно по $n$ на кожному компакті $K \subset E$.
+\end{proof}
+
+\section{Повнота простору лінійних неперервних операторів}
+
+З’ясуємо, коли простір $\LL(E, F)$ є повним у розумінні
+рівномірної або точкової збіжності.
+
+\begin{theorem}
+Якщо нормований простір $F$ --- банахів,
+то $\LL(E, F)$ --- банахів у розумінні рівномірної збіжності.
+\end{theorem}
+
+\begin{proof}
+Нехай $\{A_n\}_{n = 1}^\infty$ --- фундаментальна
+послідовність операторів, тобто
+\begin{equation*}
+    \|A_n - A_m\| \to 0, \quad n, m \to \infty.
+\end{equation*}
+
+Тоді $\forall x \in E$
+\begin{equation*}
+    \|A_n x - A_m x\| \le \|A_n - A_m\| \cdot \|x\| \to 0, \quad n, m \to \infty.
+\end{equation*}
+
+Для кожного фіксованого $x \in E$ послідовність $\{A_n x\}$ є
+фундаментальною в $F$. Оскільки простір $F$ є повним за
+умовою теореми, то послідовність $\{A_n x\}$ збігається до
+певного елемента $y \in F$. Позначимо $\lim_{n \to \infty} A_n x$.
+Отже, ми визначили відображення $A: E \to F$.
+Його лінійність випливає із властивостей границі.
+Покажемо його обмеженість:
+$\{\|A_n\|\}$ фундаментальна в $\RR$, адже
+\begin{equation*}
+    |\|A_n\| - \|A_m\|| \le \|A_n - A_m\| \to 0, \quad n, m \to \infty,
+\end{equation*}
+а отже $\{\|A_n\|\}$ обмежена в $\RR$, тобто
+\begin{equation*}
+    \exists C: \forall n \in \NN: \|A_n\| \le C.
+\end{equation*}
+
+Отже,
+\begin{equation*}
+    \|A_n x\| \le \|A_n\| \cdot \|x\| \le C \|x\|.
+\end{equation*}
+
+Внаслідок неперервності норми, маємо
+\begin{equation*}
+    \|A x\| \lim_{n \to \infty} \|A_n x\| \le C \|x\|.
+\end{equation*}
+
+Покажемо, що $A_n$ рівномірно збігається до $A$ в просторі
+$\LL(E, F)$. Задамо $\epsilon > 0$ і виберемо $n_0$ так, щоб
+$\|A_{n + p} x - A_n x\| < \epsilon$ для $n \ge n_0$, $p > 0$ і для будь-якого
+$x: \|x\| \le 1$.
+Нехай $p \to \infty$. Тоді
+\begin{equation*}
+    \forall n \ge n_0, x: \|x\| \le 1:
+    \|A x - A_n x\| < \epsilon,
+\end{equation*}
+звдки
+\begin{equation*}
+    \|A_n - A\| = \sup_{\|x\| \le 1} \|(A_n - A) x\| \le \epsilon,
+\end{equation*}
+а тому $A = \lim_{n \to \infty} A_n$
+в розумінні рівномірної збіжності.
+
+Отже, $\LL(E, F)$ є банаховим. 
+\end{proof}
+
+\begin{theorem}
+Якщо нормовані просторі $E$ і $F$ --- банахові,
+то $\LL(E, F)$ --- банахів у розумінні поточкової збіжності.
+\end{theorem}
+
+\begin{proof}
+Розглянемо точку $x \in E$ і фундаментальну у
+розумінні поточкової збіжності послідовність $\{A_n\}_{n = 1}^\infty$.
+
+Оскільки $F$ --- банахів простір, то існує елемент $y = \lim_{n \to \infty} A_n x$.
+Таким чином, визначений оператор
+$A: E \to F$, такий що $y = Ax$. Лінійність цього оператора
+випливає із лінійності границі, а обмеженість --- із теореми
+Банаха-Штейнгауза:
+\begin{equation*}
+    \|A x\| =
+    \left\| \lim_{n \to \infty} A_n x\right\| \le
+    \lim_{n \to \infty} \|A_n\| \cdot \|x\| =
+    C \|x\|. \qedhere
+\end{equation*}
+\end{proof}
+
+\section{Література}
+
+\begin{enumerate}[label={[\arabic*]}]
+\item \textbf{Садовничий~В.~А.}
+Теория операторов /
+В.~А.~Садовничий ---
+М.: Изд-во Моск. ун-та, 1986 (стр.~96--102).
+\item \textbf{Ляшко~И.~И.}
+Основы классического и современного математического анализа /
+И.~И.~Ляшко, В.~Ф~Емельянов, А.~К.~Боярчук. ---
+К.: Вища школа, 1988 (стр.~576--578).
+\end{enumerate}

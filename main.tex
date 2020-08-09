@@ -1,0 +1,51 @@
+\documentclass[a4paper,11pt,twoside=semi,openright,numbers=noenddot]{scrbook}
+\input{preamble}
+
+\title{Функціональний Аналіз}
+\subtitle{\url{https://csc-knu.github.io/fa}}
+\author{Дмитро Клюшин\thanks{Редактор Нікіта Скибицький}}
+\date{\today}
+
+\begin{document}
+
+\frontmatter
+
+\maketitle
+
+\thispagestyle{empty}
+\input{frontmatter/quotes}
+\input{frontmatter/about}
+\input{frontmatter/thanks}
+\input{frontmatter/fix}
+
+\tableofcontents
+
+\mainmatter
+
+\part{Загальна топологія}
+\parttoc
+\input{topology/introduction}
+\input{topology/closure-interior-bases}
+\input{topology/convergence-continuity}
+\input{topology/separability}
+\input{topology/compactness}
+
+\part{Простори зі структурою}
+\parttoc
+\input{metric/introduction}
+\input{metric/completeness}
+\input{metric/compactness}
+\input{metric/linear}
+\input{metric/normed}
+
+\part{Функціональний аналіз}
+\parttoc
+\input{functional/conjugate}
+\input{functional/weak-topology-convergence}
+\input{functional/uniform-boundedness}
+\input{functional/openness}
+\input{functional/spectrum}
+\input{functional/hilbert}
+\input{functional/isomorphism}
+
+\end{document}
