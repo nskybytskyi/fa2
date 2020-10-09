@@ -76,15 +76,27 @@
         [pdf](./pdf/functional/isomorphism.pdf),
         [tex](./tex/functional/isomorphism.tex)
 
-4. Додаткові розділи: [pdf](./pdf/advanced.pdf)
+4. Фільтри і напрямленності: [pdf](./pdf/filters-nets.pdf)
 
     - Напрямленості:
-        [pdf](./pdf/advanced/nets.pdf),
-        [tex](./tex/advanced/nets.tex),
+        [pdf](./pdf/filters-nets/nets.pdf),
+        [tex](./tex/filters-nets/nets.tex),
 
     - Фільтри:
-        [pdf](./pdf/advanced/filters.pdf),
-        [tex](./tex/advanced/filters.tex),
+        [pdf](./pdf/filters-nets/filters.pdf),
+        [tex](./tex/filters-nets/filters.tex),
+
+    - Границі і граничні точки фільтрів:
+        [pdf](./pdf/filters-nets/filters-limits.pdf),
+        [tex](./tex/filters-nets/filters-limits.tex),
+
+    - Ультафільтри:
+        [pdf](./pdf/filters-nets/ultrafilters.pdf),
+        [tex](./tex/filters-nets/ultrafilters.tex),
+
+    - Зв'язок між фільтрами і напрямленностями:
+        [pdf](./pdf/filters-nets/filters-nets.pdf),
+        [tex](./tex/filters-nets/filters-nets.tex),
 
 ### Про цю книгу
 
@@ -102,5 +114,4 @@
 
 На жаль, жоден відносно великий проєкт не обходиться без помилок. Без сумніву, цей матеріал не є виключенням.  Ми то чудово розуміємо, і сподіваємося, що ваше невдоволення наявними тут помилками хоча б частково окупиться відчуттям інтелектуальної переваги над редактором, отриманим від виявлення цих помилок.
 
-Будь ласка, надсилайте виправлення, коментарі, зображення кошенят, і таке інше на `n dot skybyskyi at gmail dot com`, або ж створюйте пул-ріквести у репозиторії курсу,
-що знаходиться за адресою [https://github.com/csc-knu/fa](https://github.com/csc-knu/fa).
+Будь ласка, надсилайте виправлення, коментарі, зображення кошенят, і таке інше на `n dot skybyskyi at gmail dot com`, або ж створюйте пул-ріквести у репозиторії курсу, що знаходиться за адресою [https://github.com/csc-knu/fa](https://github.com/csc-knu/fa).
