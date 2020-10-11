@@ -13,11 +13,11 @@
 \end{example}
 
 \begin{definition}
-    Нехай $X$~--- топологічний простір, $\frak F$~--- фільтр на $X$. Точка $x \in X$ називається \vocab{границею} фільтра $\frak F$ (цей факт позначається як $x = \lim \frak F$), якщо $\frak F$ мажорує фільтр околів точки $x$. Іншими словами, $x = \lim \frak F$, якщо кожний окіл точки $x$ належить фільтру $\frak F$.
+    Нехай $X$~--- топологічний простір, $\frak F$~--- фільтр на $X$. Точка $x \in X$ називається \vocab{границею фільтра $\frak F$} (цей факт позначається як $x = \lim \frak F$), якщо $\frak F$ мажорує фільтр околів точки $x$. Іншими словами, $x = \lim \frak F$, якщо кожний окіл точки $x$ належить фільтру $\frak F$.
 \end{definition}
 
 \begin{definition}
-    Точка $x \in X$ називається \vocab{граничною точкою} фільтра $\frak F$, якщо кожний окіл точки $x$ перетинається з усіма елементами фільтра $\frak F$. Множина усіх граничних точок фільтра називається $\LIM \frak F$.
+    Точка $x \in X$ називається \vocab{граничною точкою фільтра $\frak F$}, якщо кожний окіл точки $x$ перетинається з усіма елементами фільтра $\frak F$. Множина усіх граничних точок фільтра називається $\LIM \frak F$.
 \end{definition}
 
 \begin{example}
@@ -26,10 +26,13 @@
 
 \begin{theorem}
     \label{th:filterbase-limits-limitpoitns}
-    Нехай $\frak F$~--- фільтр на топологічному просторі $X$, $\frak D$~--- деяка база фільтра $\frak F$. Тоді
+    Нехай $\frak F$~--- фільтр на топологічному просторі $X$, $\frak D$~--- % деяка
+    база фільтра $\frak F$. Тоді
     \begin{enumerate}
         \item $x = \lim \frak F \iff \forall U \in \Omega_x$ $\exists A \in \frak D$: $A \subset U$;
+        
         \item $x = \lim \frak F \implies x \in \LIM \frak F$. Якщо до того ж $X$~--- хаусдорфів простір, то у фільтра $\frak F$ немає інших граничних точок. Зокрема, якщо у фільтра в хаусдорфовому просторі є границя, то ця границя є єдиною;
+        
         \item множина $\LIM \frak F$ збігається з перетином замикань усіх елементів фільтра~$\frak F$.
     \end{enumerate}
 \end{theorem}
@@ -41,7 +44,7 @@
 
         \item $x = \lim \frak F, U \in \Omega_x$ $\implies$ $U \in \frak F$ $\implies$ $\forall A \in \frak F$ $A \cap U \ne \emptyset$ $\implies$ $x \in \LIM \frak F$;
         
-        $x \in \LIM \frak F$ $\implies$ $\forall U \in \frak F, V \in \Omega_y$ $U \cap V \ne \emptyset$ $\implies$ $x = y$ (оскільки простір хаусдорфів).
+        $x \in \LIM \frak F$ $\implies$ $\forall U \in \frak F, V \in \Omega_y$ $U \cap V \ne \emptyset$ $\implies$ $x = y$ (простір хаусдорфів).
 
         \item $x = \LIM \frak F$ $\iff$ $\forall A \in \frak F, U \in \Omega_x$ $A \cap U \ne \emptyset$ $\iff$ $\forall A \in \frak F$ $x \in \closure A$. \qedhere
     \end{enumerate}
@@ -49,7 +52,7 @@
 
 \begin{theorem}
     \label{th:filters-limits-limitpoitns}
-    Нехай $\frak F_1$, $\frak F_2$~--- фільтри на топологічному просторі $X$ і $\frak F_1 \subset \frak F_2$. Тоді
+    Нехай $\frak F_1$, $\frak F_2$~--- фільтри на топологічному просторі $X$ і $\frak F_1 \subset \frak F_2$. Тоді:
     \begin{enumerate}
         \item $x = \lim \frak F_1 \implies x = \lim \frak F_2$;
         \item $x \in \LIM \frak F_2 \implies x \in \LIM \frak F_1$;
@@ -62,32 +65,32 @@
     \begin{enumerate}
         \item $\frak F_1$ мажорує фільтр $\frak M_x$ околів точки $x$, $\frak F_1 \subset \frak F_2 \implies \frak M_x \subset \frak F_2$.
 
-        \item Оскільки при збільшенні сім'я множин її перетин зменшується, то
+        \item Оскільки при збільшенні сім'ї множин її перетин зменшується, то
         \begin{equation*}
             \LIM \frak F_2 = \bigcap_{A \in \frak F_2} \closure A \subset \bigcap_{A \in \frak F_1} \closure A = \LIM \frak F_1.
         \end{equation*}
 
-        \item $x = \lim \frak F_2 \implies x \in \LIM \frak F_2 \implies x \in \LIM \frak F_1$. 
+        \item $x = \lim \frak F_2 \implies x \in \LIM \frak F_2 \implies x \in \LIM \frak F_1$. \qedhere
     \end{enumerate}
 \end{proof}
 
 \section{Границя функції по фільтру}
 
 \begin{definition}
-    Нехай $X$~--- множина, $Y$~--- топологічний простір, $\frak F$~--- фільтр на $X$. Точка $y \in Y$ називається \vocab{границею} функції $f: X \to Y$ по фільтру $\frak F$ (цей факт позначається як $y = \lim_{\frak F} f$, якщо $y = \lim f[\frak F]$. Іншими словами, $y = \lim f [\frak F]$, якщо для довільного околу $U$ точки $y$ існує такий елемент $A \in \frak F$, що $f(A) \subset U$.
+    Нехай $X$~--- множина, $Y$~--- топологічний простір, $\frak F$~--- фільтр на $X$. Точка $y \in Y$ називається \vocab{границею функції $f: X \to Y$ по фільтру $\frak F$} (цей факт позначається як $y = \lim_{\frak F} f$, якщо $y = \lim f[\frak F]$. Іншими словами, $y = \lim f [\frak F]$, якщо для довільного околу $U$ точки $y$ існує такий елемент $A \in \frak F$, що $f(A) \subset U$.
 \end{definition}
 
 \begin{definition}
-    Точка $y \in Y$ називається \vocab{граничною} точкою функції $f: X \to Y$ по фільтру $\frak F$, якщо $y \in \LIM f[\frak F]$, тобто якщо довільний окіл точки $y$ перетинається з образами усіх елементів фільтра $\frak F$.
+    Точка $y \in Y$ називається \vocab{граничною точкою функції $f: X \to Y$ по фільтру $\frak F$}, якщо $y \in \LIM f[\frak F]$, тобто якщо довільний окіл точки $y$ перетинається з образами усіх елементів фільтра $\frak F$.
 \end{definition}
 
 \begin{example}
-    Нехай $X$~--- топологічний простір, $f: \NN \to X$ і $F$~--- фільтр Фреше на $\NN$. Тоді $\lim_{\frak F} f = \lim_{n \to \infty} f(n)$.
+    Нехай $X$~--- топологічний простір, $f: \NN \to X$ і $\frak F$~--- фільтр Фреше на $\NN$. Тоді $\lim_{\frak F} f = \lim_{n \to \infty} f(n)$.
 \end{example}
 
 \begin{theorem}
     \label{th:filter-continuity}
-    Нехай $X$ і $Y$~--- топологічні простори, $F$~--- фільтр на $X$, $x = \lim \frak F$ і $f: X \to Y$~--- неперервна функція. Тоді $f(x) = \lim_{\frak F} f$.
+    Нехай $X$ і $Y$~--- топологічні простори, $\frak F$~--- фільтр на $X$, $x = \lim \frak F$ і $f: X \to Y$~--- неперервна функція. Тоді $f(x) = \lim_{\frak F} f$.
 \end{theorem}
 
 \begin{proof}
