@@ -116,6 +116,32 @@
         [pdf](./pdf/advanced/cauchy.pdf)
         [tex](./pdf/advanced/cauchy.tex)
 
+6. Сучасний функціональний аналіз: [pdf](./pdf/modern.pdf)
+
+    - Лінійні оператори і функціонали:
+        [pdf](./pdf/modern/functionals.pdf)
+        [tex](./pdf/modern/functionals.tex)
+
+    - Напівнорми і топології:
+        [pdf](./pdf/modern/seminorm.pdf)
+        [tex](./pdf/modern/seminorm.tex)
+
+    - Слабка топологія:
+        [pdf](./pdf/modern/weak.pdf)
+        [tex](./pdf/modern/weak.tex)
+
+    - Двоїстість:
+        [pdf](./pdf/modern/duality.pdf)
+        [tex](./pdf/modern/duality.tex)
+
+    - Біполяра:
+        [pdf](./pdf/modern/bipolar.pdf)
+        [tex](./pdf/modern/bipolar.tex)
+
+    - Спряжений оператор:
+        [pdf](./pdf/modern/conjugate.pdf)
+        [tex](./pdf/modern/conjugate.tex)
+
 ### Про цю книгу
 
 Цей матеріал позиціонується як спроба покращити структурованість, зрозумілість, типографічну та естетичну якість конспекту лекцій Дмитра Анатолійовича Клюшина, а саме його курсів &laquo;Функціональний аналіз&raquo; і &laquo;Додаткові розділи функціонального аналізу&raquo;, що викладаються у четвертому та дев'ятому семестрах відповідно, на спеціальності &laquo;Прикладна математика&raquo; на факультеті комп'ютерних наук та кібернетики (ФКНК) київського національного університут імені Тараса Шевченка (КНУ).
