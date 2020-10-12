@@ -28,6 +28,8 @@
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\LL}{\mathcal{L}}
 \newcommand{\inv}{^{-1}}
+\newcommand{\polar}{^0}
+\newcommand{\bipolar}{^{00}}
 
 \newcommand{\conjugate}[1]{#1^\star}
 \newcommand{\dconjugate}[1]{#1^{\star\star}}
@@ -43,6 +45,11 @@
 \DeclareMathOperator{\sign}{sgn}
 \DeclareMathOperator{\spanning}{span}
 \DeclareMathOperator{\kernel}{ker}
+\DeclareMathOperator{\linear}{lin}
+\DeclareMathOperator{\cllinear}{\closure{lin}}
+\DeclareMathOperator{\convex}{conv}
+\DeclareMathOperator{\aconvex}{aconv}
+\DeclareMathOperator{\claconvex}{\closure{aconv}}
 \DeclareMathOperator{\Closure}{cl}
 \DeclareMathOperator{\Interior}{int}
 \DeclareMathOperator*{\Bigcup}{\bigcup}
@@ -186,6 +193,11 @@
 \renewcommand*{\partheadendvskip}{}
 \renewcommand\beforeparttoc{\noindent{\bfseries \Large Частина \thepart: Зміст}}
 \doparttoc[n]
+
+\makeatletter
+\renewcommand{\@pnumwidth}{2em}
+\renewcommand{\@tocrmarg}{3.3em}
+\makeatother
 
 \renewcommand*{\sectionformat}{\color{purple}\S\thesection\autodot\enskip}
 \renewcommand*{\subsectionformat}{\color{purple}\S\thesubsection\autodot\enskip}

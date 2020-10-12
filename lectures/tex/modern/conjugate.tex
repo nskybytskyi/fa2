@@ -1,0 +1,64 @@
+\chapter{Спряжений оператор}
+
+\section{Алгебраїчно спряжний і спряжений оператори}
+
+\begin{definition}
+    Нехай $X, Y$~--- лінійні простори, $T: X \to Y$~--- лінійний оператор. \vocab{Алгебраїчно спряженим оператором} до $T$ називається оператор $T': Y' \to X'$, що діє за правилом $T' f = f \circ T$.
+\end{definition}
+
+\begin{definition}
+    Нехай $(X_1, Y_1)$, $(X_2, Y_2)$~--- дуальні пари. Будемо говорити, що у оператора $T$ існує \vocab{спряжений оператор} $\conjugate T: Y_2 \to Y_1$, якщо для будь-якого $y \in Y_2$ існує такий елемент $\conjugate T y \in Y_1$, що $\langle T x, y \rangle = \langle x, \conjugate T, y \rangle$ для всіх $x_1 \in X$.
+\end{definition}
+
+Трактуючи елементи просторів $Y_1$, $Y_2$ як функціонали на $X_1$ і $X_2$ відповідно, бачимо, що $\conjugate T y = y \circ T$. Очевидно, що спряжений оператор до $T$ існує тоді і лише тоді, коли $T'(Y_2) \subset Y_1$. У цьому випадку $\conjugate T$~--- це звуження алгебраїчно спряженого оператора $T'$ на $Y_2$. Для дуальних пар $(X_1, \conjugate X_1)$, $(X_2, \conjugate X_2)$, де $X_1, X_2$~--- банахові простори, то нове означення спряженого оператора збігається з відомим означенням спряженого до оператору в банахових просторах.
+
+\begin{theorem}
+    Нехай $X_1$ і $X_2$~--- локально опуклі простори, $T: X_1 \to X_2$~--- лінійний неперервний оператор. Тоді у $T$ існує спряжений $\conjugate T: \conjugate X_2 \to \conjugate X_1$.
+\end{theorem}
+
+\begin{proof}
+    Нехай $f \in \conjugate X_2$. Тоді функціонал $T' f = f \circ T$ є неперервним як композиція двох неперервних відображень. Отже, $T'(\conjugate X_2) \subset \conjugate X_1$.
+\end{proof}
+
+\begin{theorem}
+    Нехай $(X_1, Y_1)$, $(X_2, Y_2)$~--- дуальні пари, $T: X_1 \to X_2$~--- лінійний оператор, $\conjugate T: Y_2 \to Y_1$~--- спряжений оператор. Тоді для довільного $A \subset Y_2$
+    \begin{equation*}
+        T\inv(A\polar) = (\conjugate T A)\polar.
+    \end{equation*}
+\end{theorem}
+
+\begin{proof}
+    \begin{multline*}
+        x \in T\inv(A\polar) \iff T x \in A\polar \iff \forall y \in A \: |\langle T x, y\rangle| \le 1 \iff \\
+        \iff \forall y \in A \: |\langle x, \conjugate T y\rangle| \le 1 \iff \forall z \in \conjugate T A \: |\langle x, z\rangle| \le 1 \iff x \in (\conjugate T A)\polar. \qedhere
+    \end{multline*}
+\end{proof}
+
+\begin{theorem}
+    Нехай $(X_1, Y_1)$, $(X_2, Y_2)$~--- дуальні пари, $T: X_1 \to X_2$~--- лінійний оператор. Тоді наступні умови є еквівалентними:
+    \begin{enumerate}
+        \item У оператора~$T$ існує спряжений.
+        \item $T$~--- слабко неперервний оператор, тобто він є неперервним як оператор, що діє з $(X_1, \sigma(X_1, Y_1))$ і $(X_2, \sigma(X_2, Y_2))$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    $1 \implies 2$. Внаслідок лінійності достатньо перевірити неперервність оператору в нулі. За теоремою 13.2 базу околів нуля в топології $\sigma(X_2, Y_2)$ утворюють поляри скінчених множин $A \subset Y$. За формулою
+    \begin{equation*}
+        T\inv(A\polar) = (\conjugate T A)\polar
+    \end{equation*}
+    прообраз $T\inv(A\polar)$ околу $A\polar$~--- це знову поляра $(\conjugate T A)\polar$ скінченої множини $\conjugate T A \subset Y_1$. Отже, $T\inv(A\polar)$~--- це окіл нуля в топології $\sigma(X_1, Y_1)$.
+\end{proof}
+
+\begin{corollary}
+    Нехай $X_1, X_2$~--- локально опуклі простори, $T: X_1 \to X_2$~--- лінійний неперервний оператор. Тоді $T$~--- слабко неперервний оператор в топологіях $\sigma(X_1, \conjugate X_1)$ і $\sigma(X_2, \conjugate X_2)$.
+\end{corollary}
+
+\section{Література}
+
+\begin{enumerate}[label={[\arabic*]}]
+\item \textbf{Кадец~В.~М.}
+Курс функционального анализа /
+В.~М.~Кадец~---
+Х.: ХНУ им.~В.~Н.~Каразина, 2006. (стр.~535--538).
+\end{enumerate}
