@@ -28,17 +28,17 @@
 \end{example}
 
 \begin{example}
-    Канторів дисконтинуум ваги $\nu$~--- добуток $\CartesianProduct{X}$, де $\#\Gamma = \nu$, а множини $X_\gamma = D = \{0, 1\}$ (проста двокрапка), тобто це простір $D^\nu$.
+    Канторів дисконтинуум ваги $\nu$~--- добуток $\CartesianProduct{X}$, де $\#\Gamma = \nu$, а множини $X_\gamma = D = \{0, 1\}$(проста двокрапка), тобто це простір $D^\nu$.
 \end{example}
 
 \section{Проектори, тихоновська топологія і добуток}
 
 \begin{definition}
-    Відображення $P_\alpha: \CartesianProduct{X} \to X_\alpha$, що діє за правилом $P_\alpha (x) = x_\alpha$, $\forall \alpha \in \Gamma$, називається \vocab{координатним проектором}.
+    Відображення $P_\alpha: \CartesianProduct{X} \to X_\alpha$, що діє за правилом $P_\alpha(x) = x_\alpha$, $\forall \alpha \in \Gamma$, називається \vocab{координатним проектором}.
 \end{definition}
 
 \begin{definition}
-    Нехай $X_\gamma$, $\gamma \in \Gamma$~--- топологічні простори. \vocab{Тихоновською топологією} на $\CartesianProduct{X}$ називається найслабкіша з топологій, в якій усі координатні проектори $P_\alpha (x)$, $\alpha \in \Gamma$ є неперервними.
+    Нехай $X_\gamma$, $\gamma \in \Gamma$~--- топологічні простори. \vocab{Тихоновською топологією} на $\CartesianProduct{X}$ називається найслабкіша з топологій, в якій усі координатні проектори $P_\alpha(x)$, $\alpha \in \Gamma$ є неперервними.
 \end{definition}
 
 \begin{definition}
@@ -88,15 +88,15 @@
 
     \textbf{Достатність.} Покажемо, що будь-який окіл $V$ точки $x$ належить фільтру $\frak F$. З огляду на те, що $\forall A \in \frak F$ $A \subset B \subset X \implies B \in \frak F$, достатньо розглянути відкритий циліндричний окіл точки $x$, який міститься в $V$. Отже, розглянемо відкритий циліндричний окіл $U = \CartesianProduct{V}$ точки $x$ з основою $\prod_{\gamma \in K} V_\gamma$, тобто $\CartesianNeighbourhood{x}$.
     
-    Оскільки $\forall \gamma_0 \in K$ множина $V_{\gamma_0}$ є околом точки $x_{\gamma_0}$ в просторі $X_{\gamma_0}$ і $\lim_{\frak F} P_{\gamma_0} = x_{\gamma_0}$, то існує множина $A \in \frak F$ така, що $P_{\gamma_0}(A) \subset V_{\gamma_0}$, отже, $A \subset P_{\gamma_0}\inv (V_{\gamma_0})$, тому $P_{\gamma_0}\inv (V_{\gamma_0}) \in \frak F$. Таким чином, $\forall \gamma \in K$ $P_\gamma\inv (V_\gamma) \in \frak F$. Оскільки множина $K$ є скінченою, то $\bigcap_{\gamma \in K} P_\gamma\inv (V-\gamma) \in \frak F$.
+    Оскільки $\forall \gamma_0 \in K$ множина $V_{\gamma_0}$ є околом точки $x_{\gamma_0}$ в просторі $X_{\gamma_0}$ і $\lim_{\frak F} P_{\gamma_0} = x_{\gamma_0}$, то існує множина $A \in \frak F$ така, що $P_{\gamma_0}(A) \subset V_{\gamma_0}$, отже, $A \subset P_{\gamma_0}\inv(V_{\gamma_0})$, тому $P_{\gamma_0}\inv(V_{\gamma_0}) \in \frak F$. Таким чином, $\forall \gamma \in K$ $P_\gamma\inv(V_\gamma) \in \frak F$. Оскільки множина $K$ є скінченою, то $\bigcap_{\gamma \in K} P_\gamma\inv(V-\gamma) \in \frak F$.
     
     Оскільки
     \begin{equation*}
-        \bigcap_{\gamma \in K} P_\gamma\inv (V_\gamma) \subset \CartesianNeighbourhood{x},
+        \bigcap_{\gamma \in K} P_\gamma\inv(V_\gamma) \subset \CartesianNeighbourhood{x},
     \end{equation*}
-    а $\CartesianNeighbourhood{x}$ утворюють в $\CartesianProduct{X}$ базу околів точки $x$ (\cref{th:tychonoff-topology-base}), то
+    а $\CartesianNeighbourhood{x}$ утворюють в $\CartesianProduct{X}$ базу околів точки $x$(\cref{th:tychonoff-topology-base}), то
     \begin{equation*}
-        \bigcap_{\gamma \in K} P_\gamma\inv (V_\gamma) \subset U, \quad \forall U \in \Omega_x.
+        \bigcap_{\gamma \in K} P_\gamma\inv(V_\gamma) \subset U, \quad \forall U \in \Omega_x.
     \end{equation*}
 
     Тому, за четвертою аксіомою фільтра $U \in \frak F$.
@@ -125,8 +125,8 @@
 Курс функционального анализа /
 В.~М.~Кадец~---
 Х.: ХНУ им.~В.~Н.~Каразина, 2006. (стр.~492--495).
-\item \textbf{Александрян~Р.~А., }
+\item \textbf{Александрян~Р.~А.}
 Общая топология /
 Р.~А.~Александрян, Э.~А.~Мирзаханян~---
-М.: Высшая школа, 1979 (стр.~120--126, 230--234).
+М.: Высшая школа, 1979(стр.~120--126, 230--234).
 \end{enumerate}

@@ -1,0 +1,115 @@
+\chapter{Двоїстість}
+
+\section{Двоїстість, дуальні пари і слабка топологія}
+
+\begin{definition}
+    Нехай $X, Y$~--- лінійні простори. Відображення, що ставить кожній парі елементів $(x, y) \in X \times Y$ комплексне число $\langle x, y\rangle$ називається \vocab{двоїстістю}, якщо
+    \begin{enumerate}
+        \item $\langle x, y \rangle$~--- білінійна форма, тобто
+        \begin{align*}
+            \langle a_1 x_1 + a_2 x_2, y \rangle &= a_1 \langle x_1, y \rangle + a_2 \langle x_2, y \rangle, \\
+            \langle x, a_1 y_1 + a_2 y_2 \rangle &= a_1 \langle x, y_1 \rangle + a_2 \langle x, y_2 \rangle.
+        \end{align*}
+        \item $\langle x, y \rangle$ задовольняє умови невиродженості:
+        \begin{align*}
+            & \forall x \in X \setminus \{0\} \quad \exists y \in Y: \quad \langle x, y \rangle \ne 0, \\
+            & \forall y \in Y \setminus \{0\} \quad \exists x \in X: \quad \langle x, y \rangle \ne 0.
+        \end{align*}
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    Пара просторів $X, Y$ із заданою на них двоїстістю називаються \vocab{дуальною парою}, або \emph{парою просторів у двоїстості}.
+\end{definition}
+
+\begin{definition}
+    Нехай $X, Y$~--- пара просторів у двоїстості. По кожному~$y \in Y$ визначимо функціонал на~$X$ за правилом $y(x) = \langle x, y \rangle$, тобто $Y \subset X'$.
+
+    \vocab{Слабкою топологією} на~$X$ називатимемо топологію~$\sigma(X, Y)$, тобто базу околів нуля топології~$\sigma(X, Y)$ задає сім'я множин~$\{x \in X: \max_{y \in G} |\langle x, y \rangle| < \epsilon\}$, де $\epsilon > 0$, а $G$ пробігає всі скінчені підмножини простору~$Y$.
+\end{definition}
+
+\begin{remark}
+    Друга аксіома дуальної пари гарантує віддільність слабкої топології. За теоремою 12.1 $\conjugate{(X, \sigma(X, E))} = Y$, тобто будь-яку дуальну пару можна вважати парою вигляду $(X, \conjugate X)$.
+\end{remark}
+
+\begin{remark}
+    Особливістю загального визначення дуальної пари є рівноправність просторів $X$ і $Y$. Елементи~$x$ також можна вважати функціоналами на $Y$ і розглядати слабку топологію $\sigma(Y, X)$ на просторі $Y$.
+\end{remark}
+
+\begin{remark}
+    Топологія $\sigma(X, Y)$~--- це найслабкіша топологія, в якій усі функціонали $y(x) = \langle x, y \rangle$ є неперервними. Зокрема, якщо $X$~--- локально опуклий простір, то $\sigma(X, \conjugate X)$ слабкіше вихідної топології (звідси і назва).
+\end{remark}
+
+\begin{theorem}
+    Кожна опукла замкнена множина локально опуклого простору $X$ є замкненою і в слабкій топології $\sigma(X, \conjugate X)$. Зокрема, кожний замкнений підпростір локально опуклого підпростору $X$ є $\sigma(X, \conjugate X)$-замкненим.
+\end{theorem}
+
+\begin{proof}
+    Без доведення.
+\end{proof}
+
+\section{Поляра і аннулятор множини, їхні власивості}
+
+\begin{definition}
+    Нехай $X, Y$~--- дуальна пара. \vocab{Полярою} множини~$A \subset X$ називається множина~$A\polar \subset Y$, що визначається за правилом: $y \in A\polar$ якщо $|\langle x, y \rangle| \le 1$ для всіх $x \in A$. Аналогічно визначається поляра~$A\polar \subset X$ множини~$A \subset Y$.
+\end{definition}
+
+\begin{definition}
+    \vocab{Аннулятором} множини~$A \subset X$ називається множина~$A^\perp \subset Y$, що складається з тих $y \in Y$, якщо $\langle x, y \rangle = 0$ для всіх $x \in A$. Очевидно, $A^\perp \subset A\polar$ і згідно леми 12.2, якщо $A$~--- лінійний підпростір, то $A^\perp \subset A$. Крім того, $A^\perp = (\linear A)^\perp$.
+\end{definition}
+
+\begin{example}
+    Розглянемо пару~$(X, \conjugate X)$, де $X$~--- банахів простір. Тоді $(B_X)\polar = B_{\conjugate X}\polar$. Дійсно,
+    \begin{equation*}
+        f \in \closure B_{\conjugate X} \iff \|f\| \le 1 \iff \sup_{x \in B_X} |f(x)| \le 1 \iff f \in (B_X)\polar.
+    \end{equation*}
+\end{example}
+
+\begin{theorem}
+    Поляри мають такі властивості:
+    \begin{enumerate}
+        \item якщо $A \subset B$, то $A\polar \supset B\polar$;
+        \item $\{0_X\}\polar = Y$, $\{0_Y\}\polar = X$, де $0_X$ і $0_Y$~--- нульові елементи $X$ і $Y$ відповідно;
+        \item $(\lambda A)\polar = \lambda\inv A\polar$ при $\lambda \ne 0$;
+        \item $(\bigcup_{A \in \frak C} A)\polar = \bigcap_{A \in \frak C} A\polar$ для будь-якої сім'ї $\frak C$ підмножин простору~$X$. % Зокрема, $(A_1 \cup A_2)\polar = A_1\polar \cap A_2\polar$;
+        \item $\{x\}\polar$~--- опуклий, врівноважений $\sigma(X, Y)$-замкнений окіл нуля; % \forall x \in X
+        \item $A\polar$~--- опукла врівноважена $\sigma(X, Y)$-замкнена множина; % \forall A \subset X
+        \item множини вигляду $A\polar$, де $A$ пробігає усі скінчені підмножини простору~$X$, утворюють базу околів нуля в топології~$\sigma(X, Y)$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    Властивості 1--4 є очевидними. Опуклість і
+    врівноваженість множини
+    \begin{equation*}
+        \{x\}\polar = \{y \in Y: |\langle x, y \rangle| \le 1\} = \{y \in Y: |x(y)| \le 1 \} = x\inv \{\lambda \in \CC: |\lambda| \le 1\}
+    \end{equation*}
+    випливають з лінійності $x$ як функціонала на~$Y$. Оскільки $C_1 = \{ \lambda \in \CC: |\lambda| \le 1\}$~--- це замкнений окіл нуля в $\CC$, а функціонал~$x$ є неперервним в топології~$\sigma(X, Y)$, то ця формула означає, що $\{x\}\polar$~--- це $\sigma(X, Y)$-замкнений окіл нуля. Із цього випливає властивість 5).
+    
+    Властивість 6) випливає з 5) внаслідок властивості 4): $A\polar = \bigcap_{x \in A} \{x\}\polar$, а операція перетину не порушує опуклості, замкненості і
+    врівноваженості.
+    
+    Для доведення властивості 7) зауважимо таке: якщо підмножина $A \subset X$ є скінченою, то $A\polar = \bigcap_{x \in A} \{x\}\polar$~--- це скінчений перетин $\sigma(X, Y)$-околів. Отже, поляра скінченої множини~--- це слабкий окіл. Далі, за означенням, будь-який $\sigma(X, Y)$-окіл містить множину вигляду
+    \begin{equation*}
+        U_{G, \epsilon} = \{ y \in Y: \max_{g \in G} |g(x)| < \epsilon\}, \quad G = \{g_1, \dots, g_n\} \subset X, \quad \epsilon > 0.
+    \end{equation*}
+
+    Для $A = (2 \epsilon)\inv G$ маємо $U_{G, \epsilon} \supset A$. Отже, будь-який $\sigma(X, Y)$-окіл містить множину вигляду $A\polar$, де $A \subset X$ є скінченою множиною.
+\end{proof}
+
+\begin{corollary}
+    Аннулятор довільної $A \subset X$ є $\sigma(X, Y)$-замкненим лінійним підпростором.
+\end{corollary}
+
+\begin{proof}
+    Лінійність перевіряється безпосередньо, а $\sigma(X, Y)$-замкненість випливає з властивості 6) і формули $A^\perp = (\linear A)^\perp = (\linear A)\polar$.
+\end{proof}
+
+\section{Література}
+
+\begin{enumerate}[label={[\arabic*]}]
+\item \textbf{Кадец~В.~М.}
+Курс функционального анализа /
+В.~М.~Кадец~---
+Х.: ХНУ им.~В.~Н.~Каразина, 2006. (стр.~528--531).
+\end{enumerate}
