@@ -5,44 +5,44 @@
 
 \section{Декартів добуток як множина функцій}
 
-Нехай $\Gamma$~--- не обов'язково скінченна індексна множина, кожному елементу $\gamma$ якої поставлено у відповідність деяку множину $X_\gamma$.
+Нехай~$\Gamma$~--- не обов'язково скінченна індексна множина, кожному елементу~$\gamma$ якої поставлено у відповідність деяку множину~$X_\gamma$.
 
 \begin{definition}
-    \vocab{Декартовим добутком} множин $X_\gamma$ по $\gamma \in \Gamma$ називається множина $\CartesianProduct{X}$, яка складається із усіх таких функцій $x: \Gamma \to \bigcup_{\gamma \in \Gamma} X_\gamma$, що $\forall \gamma \in \Gamma$ $x(\gamma) \in X_\gamma$.
+    \vocab{Декартовим добутком} множин~$X_\gamma$ по~$\gamma \in \Gamma$ називається множина~$\CartesianProduct{X}$, яка складається із усіх таких функцій~$x: \Gamma \to \bigcup_{\gamma \in \Gamma} X_\gamma$, що~$\forall \gamma \in \Gamma$~$x(\gamma) \in X_\gamma$.
 \end{definition}
 
 \begin{remark}
-    У частковому випадку, коли $\forall \gamma \in \Gamma$ $X_\gamma = X$, добуток складається з усіх функцій $x: \Gamma \to X$ і називається \vocab{декартовим степенем}~$X^\Gamma$.
+    У частковому випадку, коли~$\forall \gamma \in \Gamma$~$X_\gamma = X$, добуток складається з усіх функцій~$x: \Gamma \to X$ і називається \vocab{декартовим степенем}~$X^\Gamma$.
 \end{remark}
 
 \begin{example}
-    Простір Фреше~--- добуток $\prod_{n \in \NN} X_n$, де $X_n = \RR$. Отже, простір Фреше є степенем $\RR^\NN = \RR^{\aleph_0}$, елементами якого є зліченні послідовності $x = \{x_n\}_{n = 1}^\infty$ дійсних чисел~$x_n$.
+    Простір Фреше~--- добуток~$\prod_{n \in \NN} X_n$, де~$X_n = \RR$. Отже, простір Фреше є степенем~$\RR^\NN = \RR^{\aleph_0}$, елементами якого є зліченні послідовності~$x = \{x_n\}_{n = 1}^\infty$ дійсних чисел~$x_n$.
 \end{example}
 
 \begin{example}
-    Гільбертів куб~--- добуток $\prod_{n \in \NN} X_n$, де $X_n = I = [0, 1]$, тобто це простір $I^{\aleph_0}$.
+    Гільбертів куб~--- добуток~$\prod_{n \in \NN} X_n$, де~$X_n = I = [0, 1]$, тобто це простір~$I^{\aleph_0}$.
 \end{example}
 
 \begin{example}
-    Тихоновський куб~--- добуток $\CartesianProduct{X}$, де $\# \Gamma = \nu$, а $X_\gamma = I = [0, 1]$, тобто це простір $I^\nu$.
+    Тихоновський куб~--- добуток~$\CartesianProduct{X}$, де~$\# \Gamma = \nu$, а~$X_\gamma = I = [0, 1]$, тобто це простір~$I^\nu$.
 \end{example}
 
 \begin{example}
-    Канторів дисконтинуум ваги $\nu$~--- добуток $\CartesianProduct{X}$, де $\#\Gamma = \nu$, а множини $X_\gamma = D = \{0, 1\}$(проста двокрапка), тобто це простір $D^\nu$.
+    Канторів дисконтинуум ваги~$\nu$~--- добуток~$\CartesianProduct{X}$, де~$\#\Gamma = \nu$, а множини~$X_\gamma = D = \{0, 1\}$(проста двокрапка), тобто це простір~$D^\nu$.
 \end{example}
 
 \section{Проектори, тихоновська топологія і добуток}
 
 \begin{definition}
-    Відображення $P_\alpha: \CartesianProduct{X} \to X_\alpha$, що діє за правилом $P_\alpha(x) = x_\alpha$, $\forall \alpha \in \Gamma$, називається \vocab{координатним проектором}.
+    Відображення~$P_\alpha: \CartesianProduct{X} \to X_\alpha$, що діє за правилом~$P_\alpha(x) = x_\alpha$,~$\forall \alpha \in \Gamma$, називається \vocab{координатним проектором}.
 \end{definition}
 
 \begin{definition}
-    Нехай $X_\gamma$, $\gamma \in \Gamma$~--- топологічні простори. \vocab{Тихоновською топологією} на $\CartesianProduct{X}$ називається найслабкіша з топологій, в якій усі координатні проектори $P_\alpha(x)$, $\alpha \in \Gamma$ є неперервними.
+    Нехай~$X_\gamma$,~$\gamma \in \Gamma$~--- топологічні простори. \vocab{Тихоновською топологією} на~$\CartesianProduct{X}$ називається найслабкіша з топологій, в якій усі координатні проектори~$P_\alpha(x)$,~$\alpha \in \Gamma$ є неперервними.
 \end{definition}
 
 \begin{definition}
-    Декартів добуток $\CartesianProduct{X}$, наділений тихоновською топологією, називається \vocab{тихоновським добутком}.
+    Декартів добуток~$\CartesianProduct{X}$, наділений тихоновською топологією, називається \vocab{тихоновським добутком}.
 \end{definition}
 
 \begin{remark}
@@ -50,22 +50,22 @@
 \end{remark}
 
 \begin{definition}
-    Нехай $K$~--- скінчений набір індексів з $\Gamma$. Добуток~$A = \CartesianProduct{A}$, де $A_\gamma =  X_\gamma$ при $\gamma \notin K$, і $A_\gamma \subset X_\gamma$ при $\gamma \in K$ і $A_\gamma$~--- відкриті множини в топологіях $\tau_\gamma$, називається \vocab{відкритою циліндричною множиною} з основою~$\prod_{\gamma \in K} A_\gamma$.
+    Нехай~$K$~--- скінчений набір індексів з~$\Gamma$. Добуток~$A = \CartesianProduct{A}$, де~$A_\gamma =  X_\gamma$ при~$\gamma \notin K$, і~$A_\gamma \subset X_\gamma$ при~$\gamma \in K$ і~$A_\gamma$~--- відкриті множини в топологіях~$\tau_\gamma$, називається \vocab{відкритою циліндричною множиною} з основою~$\prod_{\gamma \in K} A_\gamma$.
 \end{definition}
 
-Запишемо тихоновську топологію як топологію, що породжена сім'єю відображень. Нехай $x \in \CartesianProduct{X}$, $K \subset \Gamma$~--- скінченна множина індексів, $V_\gamma \subset X_\gamma$, $\gamma \in K$~--- околи точок $x_\gamma$. Введемо позначення
+Запишемо тихоновську топологію як топологію, що породжена сім'єю відображень. Нехай~$x \in \CartesianProduct{X}$,~$K \subset \Gamma$~--- скінченна множина індексів,~$V_\gamma \subset X_\gamma$,~$\gamma \in K$~--- околи точок~$x_\gamma$. Введемо позначення
 \begin{equation*}
     \CartesianNeighbourhood{x} =
     \left\{ \gamma \in \CartesianProduct{X}: \gamma_\alpha \in V_\alpha, \forall \alpha \in K \right\}.
 \end{equation*}
 
 \begin{remark}
-    Множина $\CartesianNeighbourhood{x}$ є відкритим циліндричним околом точки $x$ з основою $\prod_{\gamma \in K} V_\gamma$.
+    Множина~$\CartesianNeighbourhood{x}$ є відкритим циліндричним околом точки~$x$ з основою~$\prod_{\gamma \in K} V_\gamma$.
 \end{remark}
 
 \begin{theorem}[про базу околів точки в тихоновській топології]
     \label{th:tychonoff-topology-base}
-    Множини $\CartesianNeighbourhood{x}$ утворюють у тихоновській топології базу околів точки~$x$.
+    Множини~$\CartesianNeighbourhood{x}$ утворюють у тихоновській топології базу околів точки~$x$.
 \end{theorem}
 
 \begin{exercise}
@@ -80,42 +80,42 @@
 
 \begin{theorem}[критерій збіжності в тихоновському добутку]
     \label{th:tychonoff-topology-convergence-criterion}
-    Фільтр $\frak F$ на $\CartesianProduct{X}$ збігається в тихоновській топології до елемента $x = \{x_\gamma\}_{\gamma \in \Gamma}$ тоді і тільки тоді, коли $x_\gamma = \lim_{\frak F} P_\gamma$, $\forall \gamma \in \Gamma$.
+    Фільтр~$\frak F$ на~$\CartesianProduct{X}$ збігається в тихоновській топології до елемента~$x = \{x_\gamma\}_{\gamma \in \Gamma}$ тоді і тільки тоді, коли~$x_\gamma = \lim_{\frak F} P_\gamma$,~$\forall \gamma \in \Gamma$.
 \end{theorem}
 
 \begin{proof}
-    \textbf{Необхідність.} Оскільки координатні проектори на $\CartesianProduct{X}$ є неперервними і $x = \lim \frak F$, то за \cref{th:filter-continuity} $\lim_{\frak F} P_\gamma = P_\gamma(x) = x_\gamma$.
+    \textbf{Необхідність.} Оскільки координатні проектори на~$\CartesianProduct{X}$ є неперервними і~$x = \lim \frak F$, то за \cref{th:filter-continuity}~$\lim_{\frak F} P_\gamma = P_\gamma(x) = x_\gamma$.
 
-    \textbf{Достатність.} Покажемо, що будь-який окіл $V$ точки $x$ належить фільтру $\frak F$. З огляду на те, що $\forall A \in \frak F$ $A \subset B \subset X \implies B \in \frak F$, достатньо розглянути відкритий циліндричний окіл точки $x$, який міститься в $V$. Отже, розглянемо відкритий циліндричний окіл $U = \CartesianProduct{V}$ точки $x$ з основою $\prod_{\gamma \in K} V_\gamma$, тобто $\CartesianNeighbourhood{x}$.
+    \textbf{Достатність.} Покажемо, що будь-який окіл~$V$ точки~$x$ належить фільтру~$\frak F$. З огляду на те, що~$\forall A \in \frak F$~$A \subset B \subset X \implies B \in \frak F$, достатньо розглянути відкритий циліндричний окіл точки~$x$, який міститься в~$V$. Отже, розглянемо відкритий циліндричний окіл~$U = \CartesianProduct{V}$ точки~$x$ з основою~$\prod_{\gamma \in K} V_\gamma$, тобто~$\CartesianNeighbourhood{x}$.
     
-    Оскільки $\forall \gamma_0 \in K$ множина $V_{\gamma_0}$ є околом точки $x_{\gamma_0}$ в просторі $X_{\gamma_0}$ і $\lim_{\frak F} P_{\gamma_0} = x_{\gamma_0}$, то існує множина $A \in \frak F$ така, що $P_{\gamma_0}(A) \subset V_{\gamma_0}$, отже, $A \subset P_{\gamma_0}\inv(V_{\gamma_0})$, тому $P_{\gamma_0}\inv(V_{\gamma_0}) \in \frak F$. Таким чином, $\forall \gamma \in K$ $P_\gamma\inv(V_\gamma) \in \frak F$. Оскільки множина $K$ є скінченою, то $\bigcap_{\gamma \in K} P_\gamma\inv(V-\gamma) \in \frak F$.
+    Оскільки~$\forall \gamma_0 \in K$ множина~$V_{\gamma_0}$ є околом точки~$x_{\gamma_0}$ в просторі~$X_{\gamma_0}$ і~$\lim_{\frak F} P_{\gamma_0} = x_{\gamma_0}$, то існує множина~$A \in \frak F$ така, що~$P_{\gamma_0}(A) \subset V_{\gamma_0}$, отже,~$A \subset P_{\gamma_0}\inv(V_{\gamma_0})$, тому~$P_{\gamma_0}\inv(V_{\gamma_0}) \in \frak F$. Таким чином,~$\forall \gamma \in K$~$P_\gamma\inv(V_\gamma) \in \frak F$. Оскільки множина~$K$ є скінченою, то~$\bigcap_{\gamma \in K} P_\gamma\inv(V-\gamma) \in \frak F$.
     
     Оскільки
     \begin{equation*}
         \bigcap_{\gamma \in K} P_\gamma\inv(V_\gamma) \subset \CartesianNeighbourhood{x},
     \end{equation*}
-    а $\CartesianNeighbourhood{x}$ утворюють в $\CartesianProduct{X}$ базу околів точки $x$(\cref{th:tychonoff-topology-base}), то
+    а~$\CartesianNeighbourhood{x}$ утворюють в~$\CartesianProduct{X}$ базу околів точки~$x$(\cref{th:tychonoff-topology-base}), то
     \begin{equation*}
         \bigcap_{\gamma \in K} P_\gamma\inv(V_\gamma) \subset U, \quad \forall U \in \Omega_x.
     \end{equation*}
 
-    Тому, за четвертою аксіомою фільтра $U \in \frak F$.
+    Тому, за четвертою аксіомою фільтра~$U \in \frak F$.
 \end{proof}
 
 \begin{remark}
-    Із \cref{th:tychonoff-topology-base} випливає, що послідовність $x_n = \{x_{n,\gamma}\}_{\gamma \in \Gamma}$ точок добутку $\CartesianProduct{X}$ топологічних просторів збігається до точки $x$ тоді і лише тоді, коли для кожного $\gamma_0 \in \Gamma$ послідовність $\{x_{\gamma_0, n}\}$ збігається в просторі $X_{\gamma_0}$ до точки $x_{\gamma_0}$. 
+    Із \cref{th:tychonoff-topology-base} випливає, що послідовність~$x_n = \{x_{n,\gamma}\}_{\gamma \in \Gamma}$ точок добутку~$\CartesianProduct{X}$ топологічних просторів збігається до точки~$x$ тоді і лише тоді, коли для кожного~$\gamma_0 \in \Gamma$ послідовність~$\{x_{\gamma_0, n}\}$ збігається в просторі~$X_{\gamma_0}$ до точки~$x_{\gamma_0}$. 
     
     Інакше кажучи, збіжність в тихоновській топології є покоординатною.
 \end{remark}
 
 \begin{theorem}[теорема Тихонова про добуток компактів]
-    Тихоновський добуток $\CartesianProduct{X}$ будь-якої сім'ї непорожніх топологічних просторів $X_\gamma$, $\gamma \in \Gamma$ є компактним тоді і лише тоді, коли усі $X_\gamma$ є компактними.
+    Тихоновський добуток~$\CartesianProduct{X}$ будь-якої сім'ї непорожніх топологічних просторів~$X_\gamma$,~$\gamma \in \Gamma$ є компактним тоді і лише тоді, коли усі~$X_\gamma$ є компактними.
 \end{theorem}
 
 \begin{proof}
-    \textbf{Необхідність.} Нехай $X_\gamma$, $\gamma \in \Gamma$~--- довільна сім'я непорожніх просторів і їх тихоновський добуток $\CartesianProduct{X}$ є компактним. Оскільки кожна множина $X_\gamma$, $\gamma \in \Gamma$ є образом компактного простору $\CartesianProduct{X}$, отриманим за допомогою неперервного відображення $P_\gamma: X \to X_\gamma$, то простори $X_\gamma$, $\gamma \in \Gamma$ є компактними (неперервний образ компактного простору є компактним простором).
+    \textbf{Необхідність.} Нехай~$X_\gamma$,~$\gamma \in \Gamma$~--- довільна сім'я непорожніх просторів і їх тихоновський добуток~$\CartesianProduct{X}$ є компактним. Оскільки кожна множина~$X_\gamma$,~$\gamma \in \Gamma$ є образом компактного простору~$\CartesianProduct{X}$, отриманим за допомогою неперервного відображення~$P_\gamma: X \to X_\gamma$, то простори~$X_\gamma$,~$\gamma \in \Gamma$ є компактними (неперервний образ компактного простору є компактним простором).
 
-    \textbf{Достатність.} За критерієм компактності в термінах фільтрів, для того щоб простір був компактним, необхідно і достатньо, щоб кожний ультрафільтр на $X$ збігався. Нехай $\frak A$~--- ультрафільтр на $\CartesianProduct{X}$. Оскільки $X_\gamma$, $\gamma \in \Gamma$~--- компактні топологічні простори, то за критерієм компактності в термінах фільтрів $\forall \gamma \in \Gamma$ $\exists y_\gamma = \lim_{\frak A} P_\gamma$. Оскільки $P_\gamma$~--- неперервні відображення, то за \cref{th:tychonoff-topology-convergence-criterion} $y = \{y_\gamma\}_{\gamma \in \Gamma} = \lim \frak A$.
+    \textbf{Достатність.} За критерієм компактності в термінах фільтрів, для того щоб простір був компактним, необхідно і достатньо, щоб кожний ультрафільтр на~$X$ збігався. Нехай~$\frak A$~--- ультрафільтр на~$\CartesianProduct{X}$. Оскільки~$X_\gamma$,~$\gamma \in \Gamma$~--- компактні топологічні простори, то за критерієм компактності в термінах фільтрів~$\forall \gamma \in \Gamma$~$\exists y_\gamma = \lim_{\frak A} P_\gamma$. Оскільки~$P_\gamma$~--- неперервні відображення, то за \cref{th:tychonoff-topology-convergence-criterion}~$y = \{y_\gamma\}_{\gamma \in \Gamma} = \lim \frak A$.
 \end{proof}
 
 \section{Література}

@@ -3,50 +3,50 @@
 \section{Абсолютна опуклість і біполяра}
 
 \begin{definition}
-    Нехай $X$~--- лінійний простір.
+    Нехай~$X$~--- лінійний простір.
     
-    \vocab{Абсолютно опуклою комбінацією} набору елементів~$\{x_k\}_{k = 1}^n \subset X$ називається будь-яка сума вигляду $\sum_{k = 1}^n \lambda_k x_k$, де $\sum_{k = 1}^n |\lambda_k| \le 1$.
+    \vocab{Абсолютно опуклою комбінацією} набору елементів~$\{x_k\}_{k = 1}^n \subset X$ називається будь-яка сума вигляду~$\sum_{k = 1}^n \lambda_k x_k$, де~$\sum_{k = 1}^n |\lambda_k| \le 1$.
 \end{definition}
 
 \begin{definition}
-    \vocab{Абсолютно опуклою оболонкою} множини~$A$ в лінійному просторі~$X$ називається множина усіх абсолютно опуклих комбінацій скінченнлшл числа елементів множини $A$. Позначається абсолютно опукла оболонка як $\aconvex A$.
+    \vocab{Абсолютно опуклою оболонкою} множини~$A$ в лінійному просторі~$X$ називається множина усіх абсолютно опуклих комбінацій скінченнлшл числа елементів множини~$A$. Позначається абсолютно опукла оболонка як~$\aconvex A$.
 \end{definition}
 
-Нехай $(X, Y)$~--- дуальна пара, $A \subset X$. Тоді $A\polar \subset Y$ і у цієї множини теж можна розглянути поляру.
+Нехай~$(X, Y)$~--- дуальна пара,~$A \subset X$. Тоді~$A\polar \subset Y$ і у цієї множини теж можна розглянути поляру.
 
 \begin{definition}
-    Множина~$(A\polar)\polar \subset X$ називається \vocab{біполярою} множини~$A \subset X$ і позначається як $A\bipolar$.
+    Множина~$(A\polar)\polar \subset X$ називається \vocab{біполярою} множини~$A \subset X$ і позначається як~$A\bipolar$.
 \end{definition}
 
 \begin{theorem}
-    Біполяра~$A\bipolar$ множини~$A \subset X$ збігається з $\sigma(X, Y)$-замиканням абсолютно опуклої оболонки множини~$A$.
+    Біполяра~$A\bipolar$ множини~$A \subset X$ збігається з~$\sigma(X, Y)$-замиканням абсолютно опуклої оболонки множини~$A$.
 \end{theorem}
 
 \begin{proof}
-    Зауважимо, що $A\bipolar \supset A$. Дійсно, якщо $x \in A$, то за означенням множини~$A\polar$:
+    Зауважимо, що~$A\bipolar \supset A$. Дійсно, якщо~$x \in A$, то за означенням множини~$A\polar$:
     \begin{equation*}
         \forall y \in A\polar \quad |\langle x, y \rangle| \le 1.
     \end{equation*}
 
-    Це означає, що $X \in A\bipolar$.
+    Це означає, що~$X \in A\bipolar$.
 
-    Далі, біполяра~--- частковий приклад поляри. Отже, відповідно до пункту 6) теореми 13.2 $A\bipolar$~---опукла врівноважена $\sigma(X, Y)$-замкнена множина. Відповідно, $A\bipolar \supset \claconvex A$.
+    Далі, біполяра~--- частковий приклад поляри. Отже, відповідно до пункту 6) теореми 13.2~$A\bipolar$~---опукла врівноважена~$\sigma(X, Y)$-замкнена множина. Відповідно,~$A\bipolar \supset \claconvex A$.
     
-    Для доведення оберненого включання візьмемо довільну точку $x_0 \in X \setminus \claconvex A$ і переконаємося, що $x_0 \notin A\bipolar$. Дійсно, оскільки $x_0 \in \claconvex A$ і $\claconvex A$~--- це опукла врівноважена $\sigma(X, Y)$-замкнена множина, тому за теоремою Хана---Банаха (\cref{th:locally-convex-hahn-banach-theorem}) існує такий $\sigma(X, Y)$-неперервний лінійний функціонал~$y$ на~$X$, що
+    Для доведення оберненого включання візьмемо довільну точку~$x_0 \in X \setminus \claconvex A$ і переконаємося, що~$x_0 \notin A\bipolar$. Дійсно, оскільки~$x_0 \in \claconvex A$ і~$\claconvex A$~--- це опукла врівноважена~$\sigma(X, Y)$-замкнена множина, тому за теоремою Хана---Банаха (\cref{th:locally-convex-hahn-banach-theorem}) існує такий~$\sigma(X, Y)$-неперервний лінійний функціонал~$y$ на~$X$, що
     \begin{enumerate}
-        \item $|y(x)| \le 1$ $\forall x \in \claconvex A$;
+        \item $|y(x)| \le 1$~$\forall x \in \claconvex A$;
         \item $|y(x_0)| > 1$.
     \end{enumerate}
 
-    Будь-який $\sigma(X, Y)$-неперервний лінійний функціонал~--- це елемент простору~$Y$. Умова 1 означає, що $y \in (\claconvex A)\polar \subset A\polar$. Тоді друга умова означає, що $x_0 \notin A\bipolar$.
+    Будь-який~$\sigma(X, Y)$-неперервний лінійний функціонал~--- це елемент простору~$Y$. Умова 1 означає, що~$y \in (\claconvex A)\polar \subset A\polar$. Тоді друга умова означає, що~$x_0 \notin A\bipolar$.
 \end{proof}
 
 \begin{corollary}
-    Якщо $A \subset X$~--- $\sigma(X, Y)$-замкнена врівноважена множина, то $A\bipolar = A$. Зокрема, $B\polar{}\bipolar = B\polar$ $\forall B \subset Y$.
+    Якщо~$A \subset X$~---~$\sigma(X, Y)$-замкнена врівноважена множина, то~$A\bipolar = A$. Зокрема,~$B\polar{}\bipolar = B\polar$~$\forall B \subset Y$.
 \end{corollary}
 
 \begin{corollary}
-    $A^{\perp\perp} = \cllinear A$ $\forall A \subset X$. Якщо $A$~--- лінійний підпростір, то $A^{\perp\perp} = \closure A$. Нарешті, $B^{\perp\perp\perp} = B^\perp$ $\forall B \subset Y$.
+   ~$A^{\perp\perp} = \cllinear A$~$\forall A \subset X$. Якщо~$A$~--- лінійний підпростір, то~$A^{\perp\perp} = \closure A$. Нарешті,~$B^{\perp\perp\perp} = B^\perp$~$\forall B \subset Y$.
 \end{corollary}
 
 \begin{proof}
@@ -56,34 +56,34 @@
 \end{proof}
 
 \begin{corollary}
-    Якщо $A_1, A_2 \subset X$~--- $\sigma(X, Y)$-замкнені врівноважені множини, то $A_1 = A_2 \iff A_1\polar = A_2\polar$. Якщо до того ж $A_1 = A_2$~--- підпростори, то $A_1 = A_2 \iff A_1^\perp = A_2^\perp$
+    Якщо~$A_1, A_2 \subset X$~---~$\sigma(X, Y)$-замкнені врівноважені множини, то~$A_1 = A_2 \iff A_1\polar = A_2\polar$. Якщо до того ж~$A_1 = A_2$~--- підпростори, то~$A_1 = A_2 \iff A_1^\perp = A_2^\perp$
 \end{corollary}
 
 \begin{proof}
-    Очевидно, що $A_1 = A_2 \implies A_1\polar = A_2\polar$.
+    Очевидно, що~$A_1 = A_2 \implies A_1\polar = A_2\polar$.
     
-    З іншого боку, якщо $A_1\polar = A_2\polar$, то $A_1\bipolar = A_2\bipolar$ і можна застосувати теорему про біполяру.
+    З іншого боку, якщо~$A_1\polar = A_2\polar$, то~$A_1\bipolar = A_2\bipolar$ і можна застосувати теорему про біполяру.
 \end{proof}
 
 \begin{theorem}
-    Нехай $(X, Y)$~--- дуальна пара і $A \subset X$.
+    Нехай~$(X, Y)$~--- дуальна пара і~$A \subset X$.
     Тоді наступні умови є еквівалентними:
     \begin{enumerate}
         \item Множина функціоналів~$A \subset X$ розділяє точки простору~$X$.
         \item $A^\perp = \{0\}$;
         \item $A^{\perp\perp} = X$;
-        \item Лінійна оболонка множини~$A$ є $\sigma(Y, X)$-щільною в~$Y$.
+        \item Лінійна оболонка множини~$A$ є~$\sigma(Y, X)$-щільною в~$Y$.
     \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-    $1 \implies 2$. Включення $A^\perp \supset \{0\}$ виконано завжди. Якщо ж $x \in X \setminus \{0\}$, то за умовою існує $y \in A$ такий, що $\langle x, y \rangle \ne 0$. У цьому випадку $x \notin A^\perp$.
+   ~$1 \implies 2$. Включення~$A^\perp \supset \{0\}$ виконано завжди. Якщо ж~$x \in X \setminus \{0\}$, то за умовою існує~$y \in A$ такий, що~$\langle x, y \rangle \ne 0$. У цьому випадку~$x \notin A^\perp$.
 
-    $2 \implies 1$. Нехай $x \in X \setminus \{0\}$. Тоді $x \notin A^\perp$, отже існує $y \in A$, такий що $\langle x, y \rangle \ne 0$.
+   ~$2 \implies 1$. Нехай~$x \in X \setminus \{0\}$. Тоді~$x \notin A^\perp$, отже існує~$y \in A$, такий що~$\langle x, y \rangle \ne 0$.
 
-    $2 \iff 3$. Оскільки $A^\perp$ і $\{0\}$~--- це $\sigma(X, Y)$-замкнені підпростори, можна скористатися наслідком 11.3.
+   ~$2 \iff 3$. Оскільки~$A^\perp$ і~$\{0\}$~--- це~$\sigma(X, Y)$-замкнені підпростори, можна скористатися наслідком 11.3.
 
-    $3 \iff 4$. За наслідком 11.2 $A^{\perp\perp} = \cllinear A$.
+   ~$3 \iff 4$. За наслідком 11.2~$A^{\perp\perp} = \cllinear A$.
 \end{proof}
 
 \section{Література}
