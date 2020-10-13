@@ -10,7 +10,7 @@
         \item Сім'я~$\frak F$ непорожня.
         \item $\emptyset \notin \frak F$.
         \item Якщо~$A, B \in \frak F$, то~$A \cap B \in \frak F$.
-        \item Якщо~$A \in \frak F$,~$A \subset B \subset X$, то~$B \in \frak F$.
+        \item Якщо~$A \in \frak F$, $A \subset B \subset X$, то~$B \in \frak F$.
     \end{enumerate}
 \end{definition}
 
@@ -50,14 +50,14 @@
 \begin{proof}
     Перевіримо аксіоми фільтра. Перші дві аксіоми очевидні, адже фільтр містить як підмножину свою непорожню базу, і порожня множина не є надмножиною ніякоїмножини окрім порожньої, а база її не містить. Перевіримо тепер другі дві аксіоми. 
     
-    \textbf{Перетин:} якщо~$A, B \in \frak F$ то~$\exists C, D \in \frak D$ такі, що~$C \subset A$ і~$D \subset B$, а тоді~$\exists E \in \frak D$: $E \subset C \cap D$, і тому~$E \subset A \cap B$ і, як наслідок,~$A \cap B \in \frak F$. 
+    \textbf{Перетин:} якщо~$A, B \in \frak F$ то~$\exists C, D \in \frak D$ такі, що~$C \subset A$ і~$D \subset B$, а тоді~$\exists E \in \frak D$: $E \subset C \cap D$, і тому~$E \subset A \cap B$ і, як наслідок, $A \cap B \in \frak F$. 
     
     \textbf{Надмножина:} якщо~$A \in \frak F$ то~$\exists B \in \frak D$: $B \subset A$, а тому~$B 
-    \subset C$ для усіх~$C \supset A$ і, як наслідок,~$C \in \frak F$.
+    \subset C$ для усіх~$C \supset A$ і, як наслідок, $C \in \frak F$.
 \end{proof}
 
 \begin{example}
-    Якщо~$X$~--- топологічний простір,~$x_0 \in X$,~$\frak D$~--- сукупність усіх відкритих множин, що містять~$x_0$, то фільтр, породжений базою~$\frak D$, є фільтром~$\frak M_{x_0}$, що складається з усіх околів точки~$x_0$.
+    Якщо~$X$~--- топологічний простір, $x_0 \in X$, $\frak D$~--- сукупність усіх відкритих множин, що містять~$x_0$, то фільтр, породжений базою~$\frak D$, є фільтром~$\frak M_{x_0}$, що складається з усіх околів точки~$x_0$.
 \end{example}
 
 \begin{definition}
@@ -68,11 +68,11 @@
 
 \begin{theorem}
     \label{th:filterbase-image-filterbase}
-    Нехай~$X, Y$~--- множини,~$f: X \to Y$~--- функція,~$\frak D$~--- база фільтра в~$X$. Тоді сім'я~$f(\frak D)$ усіх множин вигляду~$f(A)$,~$A \in \frak D$ є базою фільтра в~$Y$.
+    Нехай~$X, Y$~--- множини, $f: X \to Y$~--- функція, $\frak D$~--- база фільтра в~$X$. Тоді сім'я~$f(\frak D)$ усіх множин вигляду~$f(A)$, $A \in \frak D$ є базою фільтра в~$Y$.
 \end{theorem}
 
 \begin{proof}
-    Виконання першої аксіоми бази фільтра є очевидним, адже образ непорожньої множини~--- непорожня множина. Нехай~$f(A), f(B)$~--- довільні елементи сім'ї~$f(\frak D)$,~$A, B \in D$. За другою аксіомою існує таке~$C \in \frak D$, що~$C \subset A \cap B$. Тоді~$f(C) \subset f(A) \cap f(B)$. Отже друга аксіома виконується і для сім'ї~$f(\frak D)$.
+    Виконання першої аксіоми бази фільтра є очевидним, адже образ непорожньої множини~--- непорожня множина. Нехай~$f(A), f(B)$~--- довільні елементи сім'ї~$f(\frak D)$, $A, B \in D$. За другою аксіомою існує таке~$C \in \frak D$, що~$C \subset A \cap B$. Тоді~$f(C) \subset f(A) \cap f(B)$. Отже друга аксіома виконується і для сім'ї~$f(\frak D)$.
 \end{proof}
 
 \begin{corollary}
@@ -135,7 +135,7 @@
 
 \begin{theorem}
     \label{th:filter-restriction-criterion}
-    Для того щоб слід~$\frak F_A$ фільтра~$\frak F$ був фільтром на~$A$, необхідно і достатньо, щоб усі перетини~$A \cap B$,~$B \in \frak F$ були непорожніми.
+    Для того щоб слід~$\frak F_A$ фільтра~$\frak F$ був фільтром на~$A$, необхідно і достатньо, щоб усі перетини~$A \cap B$, $B \in \frak F$ були непорожніми.
 \end{theorem}
 
 \begin{exercise}
@@ -146,9 +146,9 @@
     
     \textbf{Достатність.} Перевіримо аксіоми фільтра. Перші дві аксіоми очевидні. Перевіримо другі дві аксіоми. 
     
-    \textbf{Перетин.} Якщо~$B, C \in \frak F_A$, то~$\exists D, E \in \frak F$: $B = D \cap A$,~$C = E \cap A$. Тоді~$B \cap C = (D \cap A) \cap (E \cap A) = (D \cap E) \cap A \in \frak F$. 
+    \textbf{Перетин.} Якщо~$B, C \in \frak F_A$, то~$\exists D, E \in \frak F$: $B = D \cap A$, $C = E \cap A$. Тоді~$B \cap C = (D \cap A) \cap (E \cap A) = (D \cap E) \cap A \in \frak F$. 
     
-    \textbf{Надмножина.} Якщо~$B \in \frak F_A$,~$C \supset B$,~$C \subset A$, то~$\exists D \in \frak F$: $B = D \cap A$. Тоді~$C \cup D \supset D$, тобто~$C \cup D \in \frak F$, а тому~$(C \cup D) \cap A = (C \cap A) \cup (D \cap A) = C \cup B = C \in \frak F_A$.
+    \textbf{Надмножина.} Якщо~$B \in \frak F_A$, $C \supset B$, $C \subset A$, то~$\exists D \in \frak F$: $B = D \cap A$. Тоді~$C \cup D \supset D$, тобто~$C \cup D \in \frak F$, а тому~$(C \cup D) \cap A = (C \cap A) \cup (D \cap A) = C \cup B = C \in \frak F_A$.
 \end{proof}
 
 \begin{corollary}

@@ -14,8 +14,8 @@
     Нехай~$X$~--- множина елементів, яку ми будемо називати \vocab{носієм}. \vocab{Топологією} в~$X$ називається довільна система~$\tau$ його підмножин, яка задовольняє таким умовам (\vocab{аксіомам Александрова}):
     \begin{enumerate}
         \item[А1.]~$\emptyset, X \in \tau$.
-        \item[A2.]~$G_\alpha \in \tau$,~$\alpha \in A \implies \Bigcup_{\alpha \in A} G_\alpha \in \tau$, де~$A$~--- довільна множина.
-        \item[A3.]~$G_\alpha \in \tau$,~$\alpha = 1, 2, \dots, n \implies \Bigcap_{\alpha = 1}^n G_\alpha \in \tau$.
+        \item[A2.]~$G_\alpha \in \tau$, $\alpha \in A \implies \Bigcup_{\alpha \in A} G_\alpha \in \tau$, де~$A$~--- довільна множина.
+        \item[A3.]~$G_\alpha \in \tau$, $\alpha = 1, 2, \dots, n \implies \Bigcap_{\alpha = 1}^n G_\alpha \in \tau$.
     \end{enumerate}
 \end{definition}
 
@@ -26,11 +26,11 @@
 \end{definition}
 
 \begin{example}[топологічного простору]
-    Нехай~$X$~--- довільна множина,~$\tau = 2^X$~--- множина всіх підмножин~$X$. Пара~$(X, 2^X)$ називається простором з \vocab{дискретною} (\emph{максимальною}) топологією.
+    Нехай~$X$~--- довільна множина, $\tau = 2^X$~--- множина всіх підмножин~$X$. Пара~$(X, 2^X)$ називається простором з \vocab{дискретною} (\emph{максимальною}) топологією.
 \end{example}
 
 \begin{example}[топологічного простору]
-    Нехай~$X$~--- довільна множина,~$\tau = \{\emptyset, X\}$. Пара~$(X, \tau)$ називається простором з \vocab{тривіальною} (\emph{мінімальною}, або \emph{антидискретною}) топологією.
+    Нехай~$X$~--- довільна множина, $\tau = \{\emptyset, X\}$. Пара~$(X, \tau)$ називається простором з \vocab{тривіальною} (\emph{мінімальною}, або \emph{антидискретною}) топологією.
 \end{example}
 
 Зрозуміло, що на одній і тій же множині~$X$ можна ввести різні топології, утворюючи різні топологічні простори. Припустимо, що на носії~$X$ введено дві топології~---~$\tau_1$ і~$\tau_2$. Вони визначають два топологічні простори: $T_1 = (X, \tau_1)$, і~$T_2 = (X, \tau_2)$.
@@ -40,7 +40,7 @@
 \end{definition}
 
 \begin{remark}
-    Множина всіх топологій не є цілком упорядкованою, тобто не всі топології можна порівнювати одну з одною. Наприклад, наступні топології (зв'язні двокрапки) порівнювати не можна: $X = \{a, b\}$,~$\tau_1 = \{\emptyset, X, \{a\}\}$,~$\tau_2 = \{\emptyset, X, \{b\}\}$.
+    Множина всіх топологій не є цілком упорядкованою, тобто не всі топології можна порівнювати одну з одною. Наприклад, наступні топології (зв'язні двокрапки) порівнювати не можна: $X = \{a, b\}$, $\tau_1 = \{\emptyset, X, \{a\}\}$, $\tau_2 = \{\emptyset, X, \{b\}\}$.
 \end{remark}
 
 \begin{definition}
@@ -50,13 +50,13 @@
 Наприклад, множина всіх цілих чисел~$\ZZ$ замкнена в~$\RR$.
 
 \begin{remark}
-    Топологія містить всі відкриті множини. Водночас, треба зауважити, що поняття відкритих і замкнених множин не є взаємовиключними. Одна і та ж множина може бути одночасно і відкритою і замкненою (наприклад,~$\emptyset$ або~$X$), або ані відкритою, ані замкненою (множини раціональних та ірраціональних чисел в~$\RR$). Отже, топологія може містити й замкнені множини, якщо вони одночасно є відкритими.
+    Топологія містить всі відкриті множини. Водночас, треба зауважити, що поняття відкритих і замкнених множин не є взаємовиключними. Одна і та ж множина може бути одночасно і відкритою і замкненою (наприклад, $\emptyset$ або~$X$), або ані відкритою, ані замкненою (множини раціональних та ірраціональних чисел в~$\RR$). Отже, топологія може містити й замкнені множини, якщо вони одночасно є відкритими.
 \end{remark}
 
 Як бачимо, поняття відкритої множини в топологічному просторі постулюється~--- для того щоб довести, що деяка множина~$M$ в топологічному просторі~$T$ є відкритою, треба довести, що вона належить його топології.
 
 \begin{definition}
-    Нехай~$(X, \tau)$~--- топологічний простір,~$M \subset X$. Топологія~$(M, \tau_M)$, де~$\tau_M = \{ U_M^{(\alpha)} = U_\alpha \cap M, U_\alpha \in \tau\}$, називається \vocab{індукованою}.
+    Нехай~$(X, \tau)$~--- топологічний простір, $M \subset X$. Топологія~$(M, \tau_M)$, де~$\tau_M = \{ U_M^{(\alpha)} = U_\alpha \cap M, U_\alpha \in \tau\}$, називається \vocab{індукованою}.
 \end{definition}
 
 \begin{definition}
@@ -113,7 +113,7 @@
     \begin{enumerate}
         \item $M \subset \closure M$.
 
-        Нехай~$x \in M$. Тоді~$x$~--- точка дотику множини~$M$. Отже,~$x \in \closure M$.
+        Нехай~$x \in M$. Тоді~$x$~--- точка дотику множини~$M$. Отже, $x \in \closure M$.
         
         \item $\closure{\closure{M}} = \closure M$.
         
@@ -121,15 +121,15 @@
         
         \item $M \subset N \implies \closure M \subset \closure N$.
         
-        Нехай~$x_0 \in \closure M$ і~$U_0$~--- довільний окіл точки~$x_0$. Оскільки~$U_0 \cap M \ne \emptyset$ (за означенням точки дотику) і~$M \subset N$ (за умовою), то~$U_0 \cap N \ne \emptyset$. Отже,~$x_0$~--- точка дотику множини~$N$, тобто~$x_0 \in \closure N$. Таким чином,~$\closure M \subset \closure N$.
+        Нехай~$x_0 \in \closure M$ і~$U_0$~--- довільний окіл точки~$x_0$. Оскільки~$U_0 \cap M \ne \emptyset$ (за означенням точки дотику) і~$M \subset N$ (за умовою), то~$U_0 \cap N \ne \emptyset$. Отже, $x_0$~--- точка дотику множини~$N$, тобто~$x_0 \in \closure N$. Таким чином, $\closure M \subset \closure N$.
         
         \item $\closure{M \cup N} = \closure M \cup \closure N$.
         
-        З очевидних включень~$M \subset M \cup N$ і~$N \subset M \cup N$ внаслідок монотонності операції замикання випливає, що~$\closure M \subset \closure{M \cup N}$ і~$\closure N \subset \closure{M \cup N}$. Отже,~$\closure M \cup \closure N \subset \closure{M \cup N}$. З іншого боку, припустимо, що~$x \not\in \closure M \cup \closure N$, тоді~$x \not\in \closure M$ і~$x \not\in \closure N$. Отже, існує такий окіл точки~$x$, у якому немає точок з множини~$M \cup N$, тобто~$x \not\in \closure{M \cup N}$. Таким чином, за законом заперечення,~$x \in \closure{M \cup N} \implies x \in \closure M \cup \closure N$, тобто~$\closure{M \cup N} \subset \closure M \cup \closure N$.
+        З очевидних включень~$M \subset M \cup N$ і~$N \subset M \cup N$ внаслідок монотонності операції замикання випливає, що~$\closure M \subset \closure{M \cup N}$ і~$\closure N \subset \closure{M \cup N}$. Отже, $\closure M \cup \closure N \subset \closure{M \cup N}$. З іншого боку, припустимо, що~$x \not\in \closure M \cup \closure N$, тоді~$x \not\in \closure M$ і~$x \not\in \closure N$. Отже, існує такий окіл точки~$x$, у якому немає точок з множини~$M \cup N$, тобто~$x \not\in \closure{M \cup N}$. Таким чином, за законом заперечення, $x \in \closure{M \cup N} \implies x \in \closure M \cup \closure N$, тобто~$\closure{M \cup N} \subset \closure M \cup \closure N$.
         
         \item $\closure \emptyset = \emptyset$.
         
-        Припустимо, що замикання порожньої множини не є порожньою множиною: $x \in \closure \emptyset \implies \forall O(x): O(x) \cap \emptyset \ne \emptyset$. Але~$\forall N \subset X: N \cap \emptyset = \emptyset$. Отже,~$\closure \emptyset = \emptyset$. \qedhere
+        Припустимо, що замикання порожньої множини не є порожньою множиною: $x \in \closure \emptyset \implies \forall O(x): O(x) \cap \emptyset \ne \emptyset$. Але~$\forall N \subset X: N \cap \emptyset = \emptyset$. Отже, $\closure \emptyset = \emptyset$. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -138,12 +138,12 @@
 \end{theorem}
 
 \begin{proof}
-    \textbf{Необхідність.} Припустимо, що~$M$~--- замкнена множина, тобто~$G = X \setminus M$~--- відкрита множина. Оскільки,~$M \subset \closure M$, достатньо довести, що~$\closure M \subset M$. Дійсно, оскільки~$G$~--- відкрита множина, вона є околом кожної своєї точки. До того ж~$G \cap M = \emptyset$. Звідси випливає, то жодна точка~$x \in G$ не може бути точкою дотику для множини~$M$, отже всі точки дотику належать множині~$M$, тобто~$\closure M \subset M$.
+    \textbf{Необхідність.} Припустимо, що~$M$~--- замкнена множина, тобто~$G = X \setminus M$~--- відкрита множина. Оскільки, $M \subset \closure M$, достатньо довести, що~$\closure M \subset M$. Дійсно, оскільки~$G$~--- відкрита множина, вона є околом кожної своєї точки. До того ж~$G \cap M = \emptyset$. Звідси випливає, то жодна точка~$x \in G$ не може бути точкою дотику для множини~$M$, отже всі точки дотику належать множині~$M$, тобто~$\closure M \subset M$.
     \begin{equation*}
         G = X \setminus M \in \tau \implies G \cap M = \emptyset \implies \closure M \subset M.
     \end{equation*}
 
-    \textbf{Достатність.} Припустимо, що~$\closure M = M$. Доведемо, що~$G = X \setminus M$~--- відкрита множина (звідси випливатиме замкненість множини~$M$). Нехай~$x_0 \in G$. З цього випливає, що~$x_0 \not\in M$, а значить~$x_0 \not\in \closure M$. Тоді за означенням точки дотику існує окіл~$U_{x_0}$ такий, що~$U_{x_0} \cap M = \emptyset$. Значить,~$U_{x_0} \subset X \setminus M = G$, тобто~$G = \Bigcup_{x \in G} U_x \in \tau$.
+    \textbf{Достатність.} Припустимо, що~$\closure M = M$. Доведемо, що~$G = X \setminus M$~--- відкрита множина (звідси випливатиме замкненість множини~$M$). Нехай~$x_0 \in G$. З цього випливає, що~$x_0 \not\in M$, а значить~$x_0 \not\in \closure M$. Тоді за означенням точки дотику існує окіл~$U_{x_0}$ такий, що~$U_{x_0} \cap M = \emptyset$. Значить, $U_{x_0} \subset X \setminus M = G$, тобто~$G = \Bigcup_{x \in G} U_x \in \tau$.
 \end{proof}
 
 \begin{corollary}
@@ -158,7 +158,7 @@
 \end{theorem}
 
 \begin{proof}
-    Нехай~$M$~--- довільна множина із~$(X, \tau)$ і~$N = \Bigcap_\alpha F_\alpha$, де~$F_\alpha = \closure F_\alpha$,~$M \subset F_\alpha$.
+    Нехай~$M$~--- довільна множина із~$(X, \tau)$ і~$N = \Bigcap_\alpha F_\alpha$, де~$F_\alpha = \closure F_\alpha$, $M \subset F_\alpha$.
 
     Покажемо включення~$\Bigcap_\alpha F_\alpha \subset \closure M$.
     \begin{equation*}
@@ -170,7 +170,7 @@
         N \in \closure F_\alpha \forall \alpha \implies N \in F_{\alpha_0} = \closure M \implies \Bigcap_\alpha F_\alpha \subset \closure M.
     \end{equation*}
     
-    Тепер покажемо включення~$\closure M \subset \Bigcap_\alpha F_\alpha$. Розглянемо довільну замкнену множину~$F$, що містить~$M$: $F = \closure F$,~$M \subset F$. Внаслідок монотонності замикання маємо:
+    Тепер покажемо включення~$\closure M \subset \Bigcap_\alpha F_\alpha$. Розглянемо довільну замкнену множину~$F$, що містить~$M$: $F = \closure F$, $M \subset F$. Внаслідок монотонності замикання маємо:
     \begin{equation*}
         \closure F = F, M \subset F \implies
         \closure M \subset \closure F = F \implies
@@ -214,7 +214,7 @@
     Найпростішими прикладами ніде не щільних множин є цілі числа просторі~$\RR$ і пряма в просторі~$\RR^2$.
 \end{example}
 
-Множина~$A$ є щільною в кожній непорожній відкритій множині, якщо~$\forall U \in \tau$,~$U \ne \emptyset$: $\closure A \supset U$, тобто кожна точка множини~$U$ є точкою дотику множини~$A$. Отже,~$\forall x \in U \forall O(x) \in \tau O(x) \cap A \ne \emptyset$. Заперечення цього твердження збігається з означенням ніде не щільної множини. Формальний запис означення має такий вигляд:
+Множина~$A$ є щільною в кожній непорожній відкритій множині, якщо~$\forall U \in \tau$, $U \ne \emptyset$: $\closure A \supset U$, тобто кожна точка множини~$U$ є точкою дотику множини~$A$. Отже, $\forall x \in U \forall O(x) \in \tau O(x) \cap A \ne \emptyset$. Заперечення цього твердження збігається з означенням ніде не щільної множини. Формальний запис означення має такий вигляд:
 \begin{equation*}
     \exists U_0 \in \tau, U_0 \ne \emptyset: \closure A \not\supset U_0 \implies \exists x_0 \in U_0 \exists O(x_0) \in \tau: O(x_0) \cap A = \emptyset
 \end{equation*}
